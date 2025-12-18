@@ -13,7 +13,25 @@ Read through the main.tex file to understand what needs to be included in your r
 
 ### Step 2: Customize the Abaqus Script (Optional)
 
-If you want to modify the simulation parameters, edit `cohesive_model.py`:
+**IMPORTANT NOTE**: The provided `cohesive_model.py` script creates a basic model structure but does NOT include complete cohesive zone implementation. It serves as:
+- A learning template for Abaqus Python scripting
+- A starting point for building your cohesive zone model
+- A reference for material and analysis setup
+
+For a complete cohesive zone model, you have two options:
+
+**Option A (Recommended for beginners): Manual creation in Abaqus CAE**
+- Follow the methodology section in `main.tex`
+- Use Abaqus CAE GUI to create the model step-by-step
+- Use surface-based cohesive behavior (easier than cohesive elements)
+
+**Option B (Advanced): Modify the Python script**
+- Study Abaqus documentation on cohesive elements
+- Implement proper geometry partitioning for crack path
+- Add cohesive element insertion or surface-based cohesive behavior
+- Test incrementally
+
+If you want to modify simulation parameters in the script:
 
 ```python
 # Geometry parameters (lines 14-18)

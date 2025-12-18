@@ -1,9 +1,33 @@
 """
-Abaqus Python Script for Cohesive Zone Modeling
-This script demonstrates how to create a basic cohesive zone model
+Abaqus Python Script for Cohesive Zone Modeling - TEMPLATE
+This script demonstrates the structure for creating a cohesive zone model
 for crack propagation analysis under uniaxial tension.
 
+IMPORTANT NOTES:
+1. This is a SIMPLIFIED TEMPLATE. For a complete cohesive zone model, you will need to:
+   - Create proper partitions for the crack path
+   - Insert cohesive elements along the crack interface
+   - Assign the cohesive section to cohesive elements
+   
+2. Two common approaches for implementing cohesive zones in Abaqus:
+   a) Use surface-based cohesive behavior (easier - recommended for beginners)
+   b) Use cohesive elements with partitioned geometry (shown here, but incomplete)
+   c) Use XFEM for arbitrary crack paths (advanced)
+
+3. This script creates the basic model structure. You should:
+   - Study the Abaqus documentation on cohesive elements
+   - Consider using surface-based cohesive behavior as an alternative
+   - Modify the script based on your specific requirements
+   - Test the model incrementally
+
+4. For a working example, consider creating the model manually in Abaqus CAE first,
+   then use this script as a reference for automation.
+
 Usage: abaqus cae script=cohesive_model.py
+
+RECOMMENDED ALTERNATIVE: Use surface-based cohesive behavior instead of
+cohesive elements. This is simpler and more robust. See the Abaqus documentation
+section "Modeling with cohesive elements" for details.
 """
 
 from abaqus import *
@@ -73,13 +97,23 @@ del myModel.sketches['__profile__']
 
 print('Creating crack path partition...')
 
-# Create datum plane for crack
-face = part.faces.findAt((SPECIMEN_LENGTH/2, SPECIMEN_WIDTH/2, 0.0))
-edge = part.edges.findAt((0.0, SPECIMEN_WIDTH/2, 0.0))
+# NOTE: This is a simplified example. For a complete cohesive zone implementation,
+# you need to create proper partitions to insert cohesive elements.
+# 
+# RECOMMENDED APPROACH: Use surface-based cohesive behavior instead:
+# 1. Create two separate parts (upper and lower halves)
+# 2. Assemble them with a small gap or touching
+# 3. Define surface-based cohesive behavior between them
+#
+# The code below is commented out as it's incomplete for cohesive elements.
 
-# Partition for crack path (horizontal line at mid-height)
-pickedEdges = part.edges.findAt(((0.0, SPECIMEN_WIDTH/2, 0.0),))
-part.PartitionEdgeByParam(edges=pickedEdges, parameter=0.5)
+# Example of what you might do for partitioning:
+# 1. Partition the face to create the crack path
+# 2. Create a datum plane along the crack
+# 3. Use PartitionFaceByShortestPath or similar to split the geometry
+# 
+# For detailed examples, refer to Abaqus Example Problems Manual:
+# "Crack propagation using cohesive elements"
 
 # ============================================================================
 # DEFINE MATERIALS
@@ -126,7 +160,17 @@ print('Assigning sections...')
 region = (part.faces[:], )
 part.SectionAssignment(region=region, sectionName='BulkSection')
 
-# Note: Cohesive section will be assigned to cohesive elements after meshing
+# NOTE: For a complete cohesive zone model, you would need to:
+# 1. Create cohesive elements along the crack interface (requires proper partitioning)
+# 2. Create an element set containing those cohesive elements
+# 3. Assign the cohesive section to that element set
+#
+# Example (after creating cohesive elements):
+# cohesiveElements = part.elements.getByBoundingBox(...)
+# cohesiveSet = part.Set(elements=cohesiveElements, name='CohesiveElements')
+# part.SectionAssignment(region=cohesiveSet, sectionName='CohesiveSection')
+#
+# ALTERNATIVE: Use surface-based cohesive behavior in the assembly step instead
 
 # ============================================================================
 # CREATE ASSEMBLY
@@ -207,9 +251,15 @@ print('Creating mesh...')
 # Seed part
 part.seedPart(size=ELEMENT_SIZE_BULK, deviationFactor=0.1)
 
-# Refine mesh near crack (optional - requires careful edge selection)
-# crackedges = part.edges.findAt(((CRACK_LENGTH/2, SPECIMEN_WIDTH/2, 0.0),))
-# part.seedEdgeBySize(edges=crackedges, size=ELEMENT_SIZE_CRACK)
+# NOTE: For mesh refinement near the crack, you would need to:
+# 1. Identify edges along the crack path (requires proper partitioning)
+# 2. Seed those edges with finer mesh
+#
+# Example (after creating crack partitions):
+# crackEdges = part.edges.findAt(((CRACK_LENGTH/2, SPECIMEN_WIDTH/2, 0.0),))
+# part.seedEdgeBySize(edges=crackEdges, size=ELEMENT_SIZE_CRACK)
+#
+# For now, using uniform mesh throughout
 
 # Set element type
 elemType1 = mesh.ElemType(elemCode=CPS4R, elemLibrary=STANDARD)
@@ -256,8 +306,30 @@ myJob = mdb.Job(name=jobName,
 print('Saving model...')
 mdb.saveAs(pathName=MODEL_NAME + '.cae')
 
+print('\n' + '='*70)
 print('Model creation complete!')
-print('To submit the job, use: abaqus job=' + jobName)
+print('='*70)
+print('\nIMPORTANT: This script creates a basic model structure WITHOUT cohesive elements.')
+print('The model created is suitable for:')
+print('  1. Learning Abaqus Python scripting')
+print('  2. Basic uniaxial tension simulation (without crack propagation)')
+print('  3. Template for building more complex models')
+print('\nTo implement cohesive zone modeling for crack propagation, you need to:')
+print('  1. Create proper geometry partitions for the crack path')
+print('  2. Insert cohesive elements along the crack interface, OR')
+print('  3. Use surface-based cohesive behavior (recommended approach)')
+print('\nFor surface-based cohesive behavior:')
+print('  - Create two parts (upper and lower halves of specimen)')
+print('  - Define contact interaction with cohesive behavior')
+print('  - See Abaqus documentation: "Defining surface-based cohesive behavior"')
+print('\nNext steps:')
+print('  - Open the .cae file: abaqus cae database=' + MODEL_NAME + '.cae')
+print('  - Modify the model to add cohesive zone implementation')
+print('  - Refer to Abaqus Example Problems Manual for guidance')
+print('='*70)
+print('To submit the basic job, use: abaqus job=' + jobName)
+print('(Note: This will run but will NOT simulate crack propagation)')
+print('='*70 + '\n')
 
 # Optional: Submit job automatically
 # myJob.submit()

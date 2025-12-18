@@ -5,37 +5,62 @@ This repository contains a comprehensive LaTeX report template and Abaqus Python
 ## Repository Contents
 
 - **main.tex** - Complete LaTeX report template with all sections for documenting your simulation
-- **cohesive_model.py** - Abaqus Python script to automate model creation
+- **cohesive_model.py** - Abaqus Python script template demonstrating model structure (Note: This is a learning template and does not include complete cohesive zone implementation)
 - **COMPILE_INSTRUCTIONS.md** - Detailed instructions for compiling the LaTeX document
 - **figures/** - Directory for storing simulation results and figures
 - **.gitignore** - Git ignore file for LaTeX auxiliary files
 
+## Important Note About the Python Script
+
+The `cohesive_model.py` script provides a template structure for an Abaqus model but does **not** include a complete cohesive zone implementation. It demonstrates:
+- Basic model structure and Python scripting in Abaqus
+- Material definitions (bulk and cohesive properties)
+- Boundary conditions and analysis setup
+- Mesh generation basics
+
+**For a complete cohesive zone model**, you should:
+1. Create the model manually in Abaqus CAE following the methodology in `main.tex`, OR
+2. Study Abaqus documentation and extend the Python script to include proper cohesive zone implementation
+
+**Recommended approach**: Use surface-based cohesive behavior in Abaqus CAE (easier than cohesive elements).
+
 ## Quick Start
 
-### 1. Run the Abaqus Simulation
+### 1. Create the Abaqus Model
 
+**Recommended Approach: Manual Creation in Abaqus CAE**
+- Open Abaqus CAE
+- Follow the detailed methodology in `main.tex` to create the model
+- Use surface-based cohesive behavior (see Abaqus documentation)
+- Save your model
+
+**Alternative: Use the Python Script as a Starting Point**
 ```bash
-# In Abaqus CAE
+# This creates a basic model structure (NOT a complete cohesive zone model)
 abaqus cae script=cohesive_model.py
-
-# Or submit the job directly
-abaqus cae noGUI=cohesive_model.py
+# Then modify the model in Abaqus CAE to add cohesive zone behavior
 ```
 
-### 2. Export Results
+### 2. Run the Simulation
 
-- Open the results file (.odb) in Abaqus/Viewer
+- In Abaqus CAE, submit your analysis job
+- Monitor the job progress
+- Once complete, open the results file (.odb) in Abaqus/Viewer
+
+### 3. Export Results
+
+- In Abaqus/Viewer, create visualizations
 - Export figures (mesh, stress contours, force-displacement curves, etc.)
 - Save figures to the `figures/` directory
 
-### 3. Complete the Report
+### 4. Complete the Report
 
 - Edit `main.tex` to add your specific values and results
 - Fill in the bracketed placeholders `[specify value]`
 - Uncomment figure includes and update filenames
 - Add your name, student ID, and course information
 
-### 4. Compile the LaTeX Document
+### 5. Compile the LaTeX Document
 
 ```bash
 pdflatex main.tex
@@ -56,14 +81,14 @@ The LaTeX template includes:
 
 ## Abaqus Script Features
 
-The Python script (`cohesive_model.py`) automatically creates:
-- 2D plane stress specimen geometry
-- Cohesive zone elements along crack path
-- Appropriate material definitions (bulk and cohesive)
+The Python script (`cohesive_model.py`) demonstrates:
+- Basic 2D plane stress model structure in Abaqus Python
+- Material property definitions (bulk and cohesive)
 - Boundary conditions for uniaxial tension
-- Mesh with refinement capabilities
-- Analysis step with proper solver settings
+- Analysis step configuration
 - Output requests for post-processing
+
+**Note**: This is a template for learning. A complete cohesive zone implementation requires additional work (see comments in the script).
 
 ## Customization
 
