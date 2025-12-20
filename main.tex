@@ -1,0 +1,1033 @@
+\documentclass[12pt]{article}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{amsmath}
+\usepackage{geometry}
+\usepackage{float}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{setspace} % for spacing control
+\usepackage{indentfirst}
+\usepackage{titlesec}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{pifont}
+\usepackage[backend=biber]{biblatex} \addbibresource{references.bib}
+\setstretch{1.0}       % single line spacing (default)
+\setlength{\parskip}{0pt}   % no space between paragraphs
+\setlength{\parindent}{0em} % set indentation amount
+
+\makeatletter
+
+\AtBeginDocument{%
+  % Counter `lstlisting' is not defined before `\begin{document}'
+  \newcounter{llabel}[lstlisting]%
+  \renewcommand*{\thellabel}{%
+    \ifnum\value{llabel}<0 %
+      \@ctrerr
+    \else
+      \ifnum\value{llabel}>10 %
+        \@ctrerr
+      \else
+        \protect\ding{\the\numexpr\value{llabel}+201\relax}%
+      \fi
+    \fi
+  }%
+}
+\newlength{\llabelsep}
+\setlength{\llabelsep}{5pt}
+
+\newcommand*{\llabel}[1]{%
+  \begingroup
+    \refstepcounter{llabel}%
+    \label{#1}%
+    \llap{%
+      \thellabel\kern\llabelsep
+      \hphantom{\lst@numberstyle\the\lst@lineno}%
+      \kern\lst@numbersep
+    }%
+  \endgroup
+}
+\makeatother
+
+\geometry{margin=1in}
+\setlength{\parskip}{0em}
+\setlength{\parindent}{0pt}
+
+\title{Assignment 2 \\ \large Computational Fracture Mechanics (WiSe2526)}
+\author{Bagus Alifah Hasyim \\ 108023246468}
+\date{}
+
+\begin{document}
+\maketitle
+
+\section*{Given Data}
+\hspace*{2em}In this section, the parameters value for the material properties, 
+that required by the author to calculate it based on the author's Immatrikulation Nummer, will be defined accordingly. To make
+the calculation detailed and transparent, each parameter will be derived step by step. 
+
+\begin{equation}
+    d_1 = 4, \text{   }\text{   } d_2 = 6, \text{   }\text{   } d_3 = 8
+\end{equation}
+
+\vspace{1em}
+Parameter for 1st question:
+\begin{itemize}
+    \item Plate length b
+    
+    $b = 2.0 + 0.1d_1 = 2.0 + 0.1 \times 4 = 2.4 \text{ mm}$
+    \item Plate width h 
+    
+    $h = b(0.4 + 0.04d_2) = 2.4(0.4 + 0.04 \times 6) = 2.4(0.4 + 0.24) = 2.4 \times 0.64 = 1.536 \text{ mm}$
+    \item Crack length l
+    
+    $l = b(0.05 + 0.02d_3) = 2.4(0.05 + 0.02 \times 8) = 2.4(0.05 + 0.16) = 2.4 \times 0.21 = 0.504 \text{ mm}$
+    \item Applied displacement u 
+    
+    $u = 0.001 + \frac{d_3}{1000} [\text{mm}] = 0.001 + \frac{8}{1000} = 0.001 + 0.008 = 0.009 \text{ mm}$  
+    
+\end{itemize}
+
+\vspace{1em}
+Parameter for 2nd question:
+\begin{itemize}
+    \item Applied displacement u
+    $u = 0.1 + \frac{d_3}{100}[\text{mm}] = 0.1 + \frac{8}{100} = 0.1 + 0.08 = 0.18 \text{ mm}$ 
+\end{itemize}
+\vspace{1em}
+
+
+\section{Introduction}
+\hspace*{2em}For this second assignment, mechanical response analysis will be conducted using a
+simple squared geometry model with a circular hole in the center. Hence, the analysis will be 
+divided into three tasks. The first task is mesh sensitivity analysis, where the main goal of this first 
+task is to see the influence of variety of mesh sizes to the captured stress concentration generation along the defined line
+from the edge of the circular hole until the opposite edge of the plate. Then there's 
+come the second task, where the focus will be to investigate the isotropic and kinematic hardening 
+effect to its mechanical response. The last task is a subroutine implementation, where the objective
+is to point out the difference between the standard and UMAT results. 
+
+\hspace*{2em}In this following section, each question will systematically will be addressed in the assignment,
+providing the simulation set-up model, schematic, and relevant figures or graphs to support the
+analysis. All calculations and results are based on the provided data and the author’s
+unique identification number. Numerical analysis will be performed using Abaqus CAE
+with an appropriate boundary condition and settings. 
+
+
+\section{Set up of the Model}
+\hspace*{2em}For the model setup, 2D planar-deformable shell-model will be used for the plate with the specified geometry, boundary condition, material properties, and mesh.  
+\subsection{Geometry and Boundary Conditions}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{images/GEO_Base.png}
+    \caption{Baseline plate geometry with defined material A with thickness $t = 1 \;\text{mm}$. Two boundary conditions are applied, which are the 
+        fixed support restriction in y direction on the bottom line of the plate, fixed support point on the bottom right point restriction to 
+        x direction, and stress constant distribution along the top plate line with value of $\sigma_{nominal} = 1 \;\text{MPa}$}
+\end{figure}
+
+\subsection{Material Properties}
+\hspace*{2em}The material properties used in the analysis are provided in the task definition. However, 
+some parameters must be manually calculated based on the author's Immatrikulation Nummer in the very first section.
+
+\begin{table}[H]
+    \centering
+    \caption{Elastic properties for Q1.}
+    \label{tab:materialQ1-properties}
+    \begin{tabular}{ll}
+        \toprule
+        E (GPa) & $\nu$ (Poisson's Ratio) \\
+        \midrule
+        \multicolumn{1}{c}{240} & \multicolumn{1}{c}{0.3} \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+\begin{table}[H]
+    \centering
+    \caption{Material parameters (combined hardening law) for Q2.}
+    \label{tab:materialQ2-properties}
+    \begin{tabular}{lccccccc}
+        \toprule
+        $\sigma_y$ (MPa) & $C_1$ (MPa) & $\gamma_1$ & $C_2$ (MPa) & $\gamma_2$ & Q-Infinity & Hardening Param $b$ \\
+        \midrule
+        732 & 19996 & 44 & 3664 & 0 & 440 & 20 \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+\begin{table}[H]
+    \centering
+    \caption{Plastic properties for Q3}
+    \label{tab:materialQ3-properties}
+    \begin{tabular}{lll}
+        \toprule
+            \centering $\sigma_{ya}$ (MPa) & $\sigma_f$ (MPa) & $\epsilon_{p}^f$  \\
+            \midrule
+            \centering 360 & 550 & 0.4  \\
+            \bottomrule
+    \end{tabular}
+\end{table}
+\vspace{1em}
+\hspace{2em}Table~\ref{tab:materialQ1-properties} shows the elastic properties that will be used in Question 1. These properties
+consist of Young's modulus (E) and Poisson's ratio ($\nu$). 
+Table~\ref{tab:materialQ2-properties} summarizes the material parameters for the combined hardening law 
+used in Question 2, whereas some of the feature will be deactivated, for instance to model the isotropic
+hardening, the kinematic hardening parameters will be set to zero, and vice versa. Table~\ref{tab:materialQ3-properties}
+presents the plastic properties for question 3, which will be used in both
+the standard J2 plasticity model and the UMAT subroutine implementation.
+
+
+\newpage
+\section*{Results and Discussion}
+
+\subsection*{Q1: Mesh Sensitivity Analysis of plate with circular hole}
+
+\vspace{1em}
+\textit{$\dots$ Create the model as shown in figure 1, using the face partitioning illustrated in figure 2, 
+and apply the following assumptions: small deformations, plane stress conditions, 
+and a homogeneous, isotropic, linear elastic material. For each mesh size specified in 
+table 1, create a separate Job. Apply the local mesh size around the hole and use the 
+global mesh size for the remaining regions of the plate.}
+\vspace{1em}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.85\textwidth]{images/MESH_Base.png}
+    \caption{Partitioning guideline in order to create a structured mesh for the plate with
+    circular hole. The whole mesh variations use CPS4, which is a 4-node bilinear plane stress quadrilateral element, 
+    also using quad-structured mesh control feature for the whole region to retain structured mesh
+    and avoid extreme-distorted element.}
+\label{fig:MeshPartitioning}
+\end{figure}
+
+\vspace{1em}
+\hspace{2em}The baseplate with circular hole is mesh using a structured mesh, hence 
+the partitioning is well-defined to ensure a good mesh quality. As requested by the task, 
+the baseplate is partitioned using the general formatting guidelines. However, the author 
+have the freedom to adjust the partitioned size. Therefore, for this assignment the dimensioning
+of the mesh partition follows the provided Figure~\ref{fig:MeshPartitioning}. 
+
+\hspace{2em} After the plate partitioning, specifically for task 1, the baseplate will be mesh
+using 8 variations in the mesh size, where it is based on the global and local mesh size. 
+The global mesh size is defined as the mesh size for the entire plate, 
+while the local mesh size is defined as the mesh size around the circular hole (hence is the
+area inside the small square partition). This method is done in order to capture the stress
+concentration effects on the area near the hole accurately while maintaining a low computational
+effort since the mesh size is not fine for the whole plate.
+
+\hspace{2em}In order to know the mesh influence on the results, a mesh sensitivity
+analysis is performed. This analysis involves systematically varying the mesh sizes and observing the effects on the 
+simulation results, 
+particularly the stress distribution around the circular hole. Therefore, mesh variation in
+table~\ref{tab:mesh-sizes} is used for this study, with a different global and local mesh size.
+
+\begin{table}[H]
+    \centering
+    \caption{Mesh size variations used for mesh sensitivity analysis.}
+    \label{tab:mesh-sizes}
+    \begin{tabular}{ccc}
+        \toprule
+        Mesh Number & Global Mesh Size (mm) & Local Mesh Size (mm) \\
+        \midrule
+        1 & 1 & 1 \\
+        2 & 1 & 0.6 \\
+        3 & 0.8 & 0.4 \\
+        4 & 0.6 & 0.3 \\
+        5 & 0.4 & 0.2 \\
+        6 & 0.3 & 0.1 \\
+        7 & 0.2 & 0.05 \\
+        8 & 0.1 & 0.02 \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+\noindent
+\textbf{Table Description:} This table summarizes the eight mesh configurations used in the mesh sensitivity analysis. 
+Each mesh is defined by its global mesh size (applied to the entire plate)
+and a finer local mesh size (applied around the circular hole) 
+to accurately capture stress concentrations while optimizing 
+computational efficiency.
+
+\newpage
+\vspace{1em}
+\textit{$\dots$ For each mesh size, provide a figure exported directly from the 
+Abaqus software (not a screenshot of the interface).}
+\vspace{1em}
+\begin{figure}[H]
+    \centering
+    \begin{minipage}{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{images/Mesh1.png}
+        \caption*{Mesh 1: 116 elements.}
+    \end{minipage}
+    \begin{minipage}{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{images/Mesh2.png}
+        \caption*{Mesh 2: 180 elements.}
+    \end{minipage}
+    \begin{minipage}{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{images/Mesh3.png}
+        \caption*{Mesh 3: 352 elements.}
+    \end{minipage}
+    \begin{minipage}{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{images/Mesh4.png}
+        \caption*{Mesh 4: 676 elements.}
+    \end{minipage}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \begin{minipage}{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{images/Mesh5.png}
+        \caption*{Mesh 5: 1552 elements.}
+    \end{minipage}
+    \begin{minipage}{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{images/Mesh6.png}
+        \caption*{Mesh 6: 4948 elements.}
+    \end{minipage}
+    \begin{minipage}{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{images/Mesh7.png}
+        \caption*{Mesh 7: 16424 elements.}
+    \end{minipage}
+    \begin{minipage}{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{images/Mesh8.png}
+        \caption*{Mesh 8: 97042 elements.}
+    \end{minipage}
+\end{figure}
+
+\newpage
+\vspace{1em}
+\textit{$\dots$ For each mesh size, provide a contour plot of the relevant stress component, 
+with indicating the locations of both maximum and minimum stress values on the plot. 
+Please ensure the contour plots are clearly presented, and the values are readable.}
+
+\begin{figure}[H]
+    \centering
+    \label{fig:S22_Mesh1-4}
+    \begin{minipage}{0.495\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{images/S22_Mesh1.png}
+        \caption*{\small Mesh 1}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.495\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{images/S22_Mesh2.png}
+        \caption*{\small Mesh 2}
+    \end{minipage}
+    \vspace{1em}
+    \begin{minipage}{0.495\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{images/S22_Mesh3.png}
+        \caption*{\small Mesh 3}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.495\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{images/S22_Mesh4.png}
+        \caption*{\small Mesh 4}
+    \end{minipage}
+    \caption{Contour plots of the $S_{22}$ stress component for Mesh 1, 2, 3, and 4 (from left to right, top to bottom). Maximum and minimum stress locations are indicated.}
+    \label{fig:S22_Mesh1-4}
+\end{figure}
+\vspace{1em}
+\hspace{2em}The relevant stress component for this analysis is the
+$S_{22}$ stress component, which corresponds to the vertical stress in the y-direction.
+This component is particularly important for this case because the 
+applied load is a uniaxial tensile stress in the vertical direction. 
+Figure~\ref{fig:S22_Mesh1-4} shows the contour plots of the $S_{22}$ 
+stress component for the first four mesh sizes. A coarse stress distribution is shown in 
+Mesh 1, with a maximum stress of 2.231 MPa. As the mesh is refined, the maximum area (hence refer to the 
+red area) becomes more localized around the hole,
+indicating a more accurate capture of the stress concentration effect.
+
+\begin{figure}[H]
+    \centering
+    \begin{minipage}{0.495\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{images/S22_Mesh5.png}
+        \caption*{\small Mesh 5}
+    \end{minipage}
+    \begin{minipage}{0.495\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{images/S22_Mesh6.png}
+        \caption*{\small Mesh 6}
+    \end{minipage}\\[1em]
+    \begin{minipage}{0.495\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{images/S22_Mesh7.png}
+        \caption*{\small Mesh 7}
+    \end{minipage}
+    \begin{minipage}{0.495\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{images/S22_Mesh8.png}
+        \caption*{\small Mesh 8}
+    \end{minipage}
+    \caption{Contour plots of the $S_{22}$ stress component for Mesh 5, 6, 7, and 8 (from left to right, top to bottom). Maximum and minimum stress locations are indicated.}
+\end{figure}
+\vspace{1em}
+\hspace{2em}As the mesh variation increase up to 1000 elements starting from Mesh 5 variation, the 
+stress distribution becomes more refined. However, there are some enlargement of positive stress below the
+hole as the mesh is getting finer. This phenomenon can occur due to the interaction between
+the mesh refinement and the stress gradient around the hole.
+
+
+\newpage
+\vspace{1em}
+\textit{$\dots$ For each mesh size, calculate the stress concentration factor $K_t = \sigma_{max} / \sigma_{nom}$, 
+You are required to provide two plots: the first plot should show eight curves 
+(one for each mesh size), the relevant stress over the path. 
+The second plot should display the mesh number against $K_t$. 
+Based on the results, discuss and justify which mesh provides the most accurate and 
+efficient representation of stress concentration, and explain why it should be chosen.}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{images/StressConc.png}
+    \caption{Stress concentration distribution along the defined path 
+    for all mesh sizes. Each curve represents the relevant stress 
+    component for a specific mesh configuration, illustrating the 
+    effect of mesh refinement on capturing the stress concentration 
+    near the circular hole. The path is defined from the edge of the hole to the opposite edge 
+    of the plate, marked by redline in the geometry. The stress concentration factor is calculated
+    based on the ratio of generated stress or maximum stress in the specific point to the
+    nominal stress, which is 1 MPa.}
+    \label{fig:CombinedStressDistribution}
+\end{figure}
+\vspace{1em}
+\hspace{2em}Figure~\ref{fig:CombinedStressDistribution}
+shows the stress distribution of the $S_{22}$ stress component along 
+the defined path for all mesh sizes. As the mesh is refined, there are some tendencies that appear in the development of the stress 
+distribution curve. The first tendency is the maximum stress value is increasing as the mesh
+is getting finer. This is due to the fact that a finer mesh can capture the stress concentration
+more accurately, leading to higher peak stress values. However, after Mesh 6 variation, 
+the maximum stress value starts to decrease slightly as shown in figure~\ref{fig:CombinedStressDistribution_Kt}. 
+This indicates that the solution is converging, and further mesh refinement 
+does not significantly change the results.
+
+\hspace{2em}The second tendency is the overall shape of the stress distribution curve becomes smoother as 
+the element size decreases. This is because a finer mesh has the ability to capture the 
+stress gradients more accurately, resulting in a more continuous stress curves along the path.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{images/Kt.png}
+    \caption{Stress concentration factor $K_t$ along the defined path 
+    for all mesh sizes. Each curve represents the $K_t$ value for a specific mesh configuration, illustrating the 
+    effect of mesh refinement on capturing the stress concentration 
+    near the circular hole. The plot is divided by two plots, where the main plot shows the overall
+    $K_t$ value based on the element numbers that being used, while the zoomed-in plot shows the detail of $K_t$ value based on 
+    specifically the mesh numbering.}
+    \label{fig:CombinedStressDistribution_Kt}
+\end{figure}
+
+\vspace{1em}
+\hspace{2em}Based on these results, mesh number 3 is chosen as the most optimal 
+mesh sizing configuration. As we refer to the classical value of $K_t$, which is $K_t\approx 2.72$ for plate structures with ratio
+of 0.1 based on Figure\ref{fig:Kt_Graph}
+from the appendix of the assignment 2, 
+as we see that mesh 3 provides a $K_t$ value that is in close agreement with this classical solution. 
+This indicates that the mesh is sufficiently refined to capture the stress concentration effects 
+accurately without being overly computationally expensive. It is possible that to use 
+more refined mesh than mesh 8, since the curve is about to converge to value of 2.72. 
+However, the computational cost will become significantly higher, 
+while the improvement in accuracy will not be substantial. Therefore, 
+mesh 3 is selected as the optimal mesh for this analysis, balancing accuracy and efficiency.   
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.55\textwidth]{images/Kt_Graph.png}
+    \caption{Plot of the stress concentration factor $K_t$ versus mesh number for all mesh configurations. 
+    For this case, it shows that the effective $K_t$ for d/W = 0.1 is approximately
+    2.72. Hence, this will be a reference to choose the most optimal mesh size configuration.}
+    \label{fig:Kt_Graph}
+\end{figure}
+
+
+\vspace{1em}
+\textit{$\dots$ Taking advantage of the symmetry in both the geometry and the boundary conditions, 
+propose a simplified model that reduces computational cost and simulation time. 
+Create and submit two figures: one showing the mesh of the proposed model, 
+and the other displaying contour plot of the relevant stress distribution. 
+Compare it to the original model.}
+\vspace{1em}
+\begin{figure}[H]
+    \centering
+    \hspace{-0.05\textwidth} % Move the image to the right
+    \begin{minipage}{0.38\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{images/quad_mesh.png}
+        \vspace{-2.6em} % Adjust this value to move the image down
+    \end{minipage}
+    \hspace{0.1\textwidth} % Move the image to the right
+    \begin{minipage}{0.3\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{images/quad.png}
+    \end{minipage}
+    \caption{(Left) Mesh of the proposed quad-symmetry model. (Right) boundary conditions configuration applied to the
+    half model. Additional boundary condition is applied to the symmetry line, which
+    here restrict the horizontal movement while allowing y-axis movement. The restriction on the right bottom
+    corner is omitted since it is already restricted by the symmetry line for the horizontal movement. The nominal stress
+    is applied on the top line as in the full model, as well for the fixed support on the bottom that allows 
+    horizontal movement. }
+    \label{fig:QuadModel}
+\end{figure}
+\vspace{1em}
+\hspace{2em}The symmetry is modeled as in figure~\ref{fig:QuadModel}, 
+where the mesh is created using the same mesh size as in Mesh 4 variation. Modification
+of boundary condition is done as in figure~\ref{fig:QuadModel} so that the symmetry model
+can represent the full model. After running the simulation, the stress contour plot 
+is shown in figure~\ref{fig:QuadModel_StressContour}. It can be seen that the stress
+distribution for the symmetry model is almost identical with the full model. The value of 
+maximum stress and minimum stress is also the same for both cases. There are some slightly
+deviation in both maximum and minimum $S_{22}$ stress values. Hence by utilizing
+symmetry, the computational cost and simulation time can be significantly reduced by calculating
+fewer areas which represent the full model. 
+\vspace{1em}
+
+\begin{figure}[H]
+    \centering
+    \begin{minipage}{0.49\textwidth}
+        \centering
+        \hspace{-0.05\textwidth} % Move the image to the right
+        \includegraphics[width=\textwidth]{images/S22_Mesh3.png}
+        \caption*{Full model}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.49\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{images/S22_Mesh3_Quad.png}
+        \caption*{Quad-symmetry model}
+    \end{minipage}
+    \caption{Comparison of $S_{22}$ stress contours for Mesh 3: full model (left) and quad-symmetry model (right). 
+    Both plots show the stress distribution and concentration near the hole, demonstrating that the quad-symmetry model accurately reproduces the results of the full model, with slighly
+    deviation on the values.}
+    \label{fig:QuadModel_StressContour}
+\end{figure}
+
+\newpage
+\subsection*{Q2: Investigate the effects of isotropic and kinematic hardening on the mechanical behavior of a material}
+\hspace{2em}In this question, the focus will be to investigate the isotropic
+and kinematic hardening effect to its mechanical response. The analysis will
+be conducted using an uniaxial tensile test model, where the geometry is from previous
+question 1. But here instead of using a nominal stress $\sigma_{nominal}$, a displacement of 
+0.2 mm will be applied to the top edge of the plate, while the rest of the boundary conditions
+is similar as in figure~\ref{fig:MeshPartitioning}. However, since hardening effects would be investigated,
+cyclic loading will be applied to the model. A cyclic amplitude in figure~\ref{fig:CyclicAmplitude} is used
+to perform the cyclic loading simulation based on the total displacement of 0.2 mm. 
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{visualize_tensileGraph/res/cyclic_amplitude.png}
+    \caption{Applied cyclic loading amplitude for the tension-compression simulation. 
+    The plot shows the displacement history used to investigate the hardening behavior under repeated loading cycles. The amplitude
+    is defined to reach a maximum displacement of 0.2 mm as the peak value is reached, while
+    the minimum displacement is set to -0.2 mm when the valley is reached. This loading pattern is applied for
+    5 cycles and the total time duration of 20 seconds.}
+    \label{fig:CyclicAmplitude}
+\end{figure}
+\newpage
+\vspace{1em}
+\textit{$\dots$\textbf{Isotropic Hardening Model:} Set the material parameters for the 
+isotropic hardening model, keeping kinematic hardening deactivated. 
+Perform a cyclic loading simulation (tension-compression) 
+using the amplitude plotted in figure 3. Plot and analyze the stress-strain hysteresis loops.}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{visualize_tensileGraph/res/Iso_Hard.png}
+    \caption{Stress-strain hysteresis loop for the isotropic hardening model under cyclic tension-compression loading. 
+    The plot illustrates the expansion of the yield surface and the 
+    corresponding material response. For this isotropic hardening model, Q-infinity and hardening
+    parameter b are set according to table~\ref{tab:materialQ2-properties}, whereas the $C_1$, $\gamma_1$, and $C_2$ 
+    are set to zero to disable the kinematic hardening effect.}
+    \label{fig:Iso_Hard}
+\end{figure}
+\vspace{1em}
+\hspace{2em}Figure~\ref{fig:Iso_Hard} 
+shows the stress-strain hysteresis loop for the isotropic hardening model 
+under cyclic tension-compression loading. As the cyclic load applied, at first cycle the material
+starts to yield at the initial yield stress of 732 MPa. As the loading continues and changing direction
+to compression, the yield surface starts to expand isotropically, leading to 
+an increase in the yield stress for subsequent cycles. 
+This expansion of the yield surface is characteristic of isotropic hardening,
+where the material's resistance to plastic deformation increases uniformly
+in all directions. 
+
+\newpage
+\textit{$\dots$\textbf{Kinematic Hardening Model:} Set the material parameters for 
+the kinematic hardening model, assuming no isotropic hardening. 
+Perform a cyclic loading simulation (tension-compression) using 
+the amplitude plotted in figure 3. 
+Plot and analyze the stress-strain hysteresis loops.}
+\vspace{1em}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{visualize_tensileGraph/res/Kin_Hard.png}
+    \caption{Stress-strain hysteresis loop for the kinematic hardening model under 
+    cyclic tension-compression loading. The plot demonstrates the translation of the yield surface and 
+    the corresponding material response. For this kinematic hardening model,
+    Q-infinity and hardening parameter b are set to zero to disable the isotropic hardening.
+    While parameters such as $C_1$, $\gamma_1$, and $C_2$ 
+    are set according to table~\ref{tab:materialQ2-properties} in order to
+    activate kinematic hardening.}
+    \label{fig:Kin_Hard}
+\end{figure}
+\vspace{1em}
+\hspace{2em}Figure~\ref{fig:Kin_Hard} shows the stress-strain hysteresis 
+loop for the kinematic hardening model under cyclic tension-compression 
+loading. Unlike the isotropic hardening case, the yield surface translates 
+in the stress space without changing its size. 
+This behavior indicates that kinematic hardening occurs, where the material's 
+yield surface moves in response to plastic deformation, allowing for a 
+more accurate representation of the Bauschinger effect. 
+
+\newpage
+\textit{$\dots$Compare the extracted curves from previous questions and discuss the results.}
+\vspace{1em}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{visualize_tensileGraph/res/Iso_Kinem_Comparison.png}
+    \caption{Comparison of stress-strain hysteresis loops for isotropic and kinematic 
+    hardening models under cyclic tension-compression loading. 
+    The plot highlights the differences in material response 
+    due to both hardening mechanisms.}
+    \label{fig:Iso_Kinem_Comparison}
+\end{figure}
+\vspace{1em}
+\hspace{2em}Figure~\ref{fig:Iso_Kinem_Comparison} shows the comparison of 
+stress-strain hysteresis loops for isotropic and kinematic hardening models 
+under cyclic tension-compression loading. 
+The isotropic hardening model exhibits a symmetric hysteresis loop, 
+indicating uniform expansion of the yield surface in all directions. 
+In contrast, the kinematic hardening model shows an asymmetric hysteresis 
+loop, reflecting the translation of the yield surface in response to 
+plastic deformation. The difference from these two models is obvious,
+where the isotropic hardening model shows a larger area within the hysteresis
+loop, indicating higher energy dissipation during cyclic loading. 
+This is due to the uniform increase in yield stress that allows in this model. While 
+in the kinematic hardening model, increase in yield stress does not occur, only
+shifting of yield surface is allowed. Hence, the energy dissipation
+is lower compared to the isotropic hardening model.
+
+\newpage
+\textit{$\dots$Simulate the model using combined hardening law parameters in table 2. 
+Compare the results with those obtained using isotropic and kinematic hardening parameters. 
+Discuss how variations in the combined hardening parameters influence the material behavior.}
+\vspace{1em}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{visualize_tensileGraph/res/Com_Hard.png}
+    \caption{Stress-strain hysteresis loop for the combined hardening model 
+    under cyclic tension-compression loading. 
+    The plot shows the material response when both 
+    isotropic and kinematic hardening mechanisms are active, 
+    illustrating the combined effects on the expansion and 
+    translation of the yield surface.}
+    \label{fig:Com_Hard}
+\end{figure}
+
+\hspace{2em}As both of the model are combined, the stress-strain hysteresis
+loop for the combined hardening model is shown in figure~\ref{fig:Com_Hard}. This shows
+a unique material behavior, whereas the cyclic loading is applied, 
+the yield surface expands isotropically as well as translating in the 
+stress space. This combined effect results in a more complex hysteresis loop, 
+which reflects the play role between isotropic and kinematic hardening
+mechanisms. The combined hardening model produced a larger hysteresis loop
+area compared to the kinematic, as well as for the isotropic hardening model. 
+
+\hspace{2em}This is because the combined hardening model incorporates both of the hardening
+model, so that it have the ability to increase the yield stress surface as well shifting
+the yield surface. Therefore, the energy dissipation during cyclic loading 
+is higher than the other two models by looking at the hysteresis loop area. 
+A comparison of all three hardening models is 
+shown in figure~\ref{fig:Hardening_Comparison}.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{visualize_tensileGraph/res/Hardening_Graph.png}
+    \caption{Comparison of stress-strain hysteresis loops for isotropic, 
+    kinematic, and combined hardening models under cyclic 
+    tension-compression loading. 
+    The plot highlights the differences in material 
+    response due to these three hardening mechanisms. It shows that when the first
+    time material yielded, both 3 hardening mechanism are having the same transitional
+    elastic-plastic breaking point. However, as the loading increase, combined hardening have
+    the highest hardening modulus, where this is shown by the highest hardening development
+    (steeper slope) compared to the kinematic and isotropic hardening model. }
+    \label{fig:Hardening_Comparison}
+\end{figure}
+
+
+\newpage
+\subsection*{Q3: Standard and UMAT subroutine for J2 plasticity}
+\vspace{1em}
+\textit{$\dots$Read the provided J2 UMAT, then decide to choose plane stress or plane strain condition, add
+a screenshot that shows the code lines where this choice is made and where elastic stiffness
+and equivalent von mises stress is calculated, and give an explanation based on the lecture.}
+\vspace{1em}
+\begin{lstlisting}[
+  language=Fortran,
+  numbers=left,
+  numberstyle=\small\itshape,
+  stepnumber=1,
+  frame=lines,
+  backgroundcolor=\color{blue!25},
+  mathescape,
+]$\llabel{header}$
+C ----------------------------------------------------------------
+C UMAT FOR ISOTROPIC ELASTICITY AND ISOTROPIC MISES PLASTICITY
+C CANNOT BE USED FOR PLANE STRESS
+C 
+C PROPS(1) - E
+C PROPS(2) - NU
+C PROPS(3...) - YIELD AND HARDENING DATA
+C CALLS UHARD FOR CURVE OF YIELD STRESS VS. PLASTIC STRAIN
+C ----------------------------------------------------------------
+\end{lstlisting}
+\vspace{1em}
+Code section in the UMAT where the plane strain or plane stress condition is selected. 
+This determines the appropriate constitutive behavior for the simulation. Hence, it is stated explicitly
+in the header 2nd and 3rd line that this UMAT subroutine cannot be used for plane stress condition.
+\vspace{1em}
+\begin{lstlisting}[
+  language=Fortran,
+  numbers=left,
+  numberstyle=\small\itshape,
+  stepnumber=1,
+  frame=lines,
+  backgroundcolor=\color{blue!25},
+  mathescape,
+]$\llabel{header}$
+C    ELASTIC STIFFNESS
+C
+      DO K1=1, NDI                       
+        DO K2=1, NDI                      
+          DDSDDE(K2, K1)=ELAM            
+        END DO                           
+        DDSDDE(K1, K1)=(EG2+ELAM)        
+      END DO                             
+        DDSDDE(K1, K1)=EG
+      END DO      
+\end{lstlisting}
+\vspace{1em}
+Code lines in the UMAT where the elastic stiffness matrix is calculated. 
+This matrix defines the linear elastic response of the material.
+\begin{lstlisting}[
+  language=Fortran,
+  numbers=left,
+  numberstyle=\small\itshape,
+  stepnumber=1,
+  frame=lines,
+  backgroundcolor=\color{blue!25},
+  mathescape,
+]$\llabel{header}$
+C CALCULATE EQUIVALENT VON MISES STRESS
+C
+      SMISES=(STRESS(1)-STRESS(2))**2+(STRESS(2)-STRESS(3))**2
+     1       +(STRESS(3)-STRESS(1))**2                   
+      DO K1=NDI+1,NTENS                      
+        SMISES=SMISES+SIX*STRESS(K1)**2      
+      END DO
+      SMISES=SQRT(SMISES/TWO)     
+\end{lstlisting}
+\vspace{1em}
+\hspace{2em}This code section in the UMAT where the equivalent von Mises stress is computed. 
+This value is used to evaluate yielding according to the J2 plasticity criterion.
+From these three snippets shows the code section of the UMAT subroutine file
+in which explicitly stated that the simulation should use 
+plane strain instead of plane stress. This is done by set up the 
+mesh type that will be used in the simulation, whereas plane strain mesh type, hence
+CPE4  (A 4-node bilinear plane strain quadrilateral) in Abaqus, is utilized. Another 
+supporting facts that this model is using plane strain condition is stated
+in the equation definition of the elastic stiffness matrix in the second snippets, as
+ well for Von Misses stress calculation in third snippets. Where in both equations,
+ the UMAT subroutine file is considering the out-of-plane stress
+ component, $\sigma_{33}$, which for other case is zero in plane stress condition. From the lecture,
+ $\sigma_{33}$ have the relation as follows:
+
+ \begin{equation}
+    \sigma_{33} = \nu(\sigma_{11} + \sigma_{22}) = \frac{E\nu}{(1+\nu)(1-2\nu)}(\varepsilon_{11} + \varepsilon_{22})
+ \end{equation}
+
+\vspace{1em}
+Whereas in this equation, $\sigma_{33}$ is expressed using the in-plane stress components
+(which here is the 11 and 22 component) and the material properties such as 
+Young's modulus, $E$, and Poisson's ratio, $\nu$.
+
+\newpage
+\vspace{1em}
+\textit{$\dots$Run two simulations with a displacement of 0.5 mm and same material properties: one with
+the Abaqus embedded J2 model and one with UMAT. Plot, compare, and discuss the true stress-strain
+curve for both cases.}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{visualize_tensileGraph/res/TrueStressStrain.png}
+    \caption{Comparison of tensile test for both J2-UMAT and J2-Abaqus model using the effective mesh variation from Q1. 
+    The plot shows the true stress-strain curves for both models, illustrating a linear behavior
+    are shown for both models in the elastic region, followed by a transitional elastic-plastic region
+    in the yielding point at strain about 0.002, and then followed by a plastic
+    region where the curve is none-linear. }
+\end{figure}
+
+\hspace{1em} Figure above shows the true stress-strain curves for J2-UMAT model
+and J2-Abaqus. Both of the curve having the same overall behavior in the elastic and plastic area.
+The elastic-plastic transition and the plastic region seems to have the exact behavior, which hence illustrated
+using a dot curve that plot for each model, where for each data points both curves showing the 
+exact same results.
+
+\newpage
+\vspace{1em}
+\textit{$\dots$From the embedded J2 simulation, select four representative time frames that trace the
+evolution from the purely elastic status to the onset of localized necking, present for each frame
+a contour plot of von Mises stress and equivalent plastic strain. Describe the deformation
+process of the plate with a hole.}
+\vspace{1em}
+
+%% Von Mises
+\begin{figure}[H]
+    \centering
+    \begin{minipage}{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{images/Q3-3/MISES_1.png}
+        \caption*{(a) von Mises stress, Frame 1}
+        \vspace{2em}
+    \end{minipage}
+    \begin{minipage}{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{images/Q3-3/MISES_2.png}
+        \caption*{(b) von Mises stress, Frame 2}
+        \vspace{2em}
+    \end{minipage}
+    \vspace{1em}
+    \begin{minipage}{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{images/Q3-3/MISES_3.png}
+        \caption*{(c) von Mises stress, Frame 3}
+    \end{minipage}
+    \begin{minipage}{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{images/Q3-3/MISES_4.png}
+        \caption*{(d) von Mises stress, Frame 4}
+    \end{minipage}
+    \caption{Contour plots of von Mises stress at four 
+    representative time frames from the 
+    embedded J2 simulation, 
+    showing the evolution from elastic to 
+    localized necking. The von Mises stress grows
+    starting from the initial loading phase in time frame 1, where
+    it is at the elastic region. At frame 2, it starts to deform plastically
+    as the stress distribution starts to yield.}
+    \label{fig:J2-Abaqus}
+\end{figure}
+\vspace{1em}
+\hspace{2em}Figure above shows the contour plots of the J2-Abaqus model development.
+The extracted plot starts from frame 1 in figure~\ref{fig:J2-Abaqus}(a), where the 
+material is still in elastic state, with a flower distribution that consist of 6 petals shape-like,
+whereas the upper and lower petals have the lower stress distribution from 51 to 95 MPa, and the
+four diagonal petals have stress in range of 138 until 203 MPa. This elastic state 
+also can be shown in figure~\ref{fig:J2-Abaqus-PEEQ}(a),
+where the equivalent plastic strain is zero in this state. 
+
+\hspace{2em}As the loading starts to increase, transitional phenomenon occurs in the second frame, 
+shown in figure ~\ref{fig:J2-Abaqus}(b). The stress distribution shape starts to change 
+as the petals shape is having the different form and stress value. The red area in the left and right side
+of the hole start to expand, indicating that the stress concentration starts to propagate. This is also proven
+in figure~\ref{fig:J2-Abaqus-PEEQ}(b), where the equivalent plastic strain starts to develop as from the left
+and right side of the hole.
+
+\hspace{2em}As the loading continues to increase to frame 3 and 4, it is shown from the PEEQ contour in figure
+~\ref{fig:J2-Abaqus-PEEQ}(c) and (d) that the plastic strain starts to 
+localize in the left and right side of the hole. Then the plastic strain start to grow diagonally to
+the top-right and left; and bottom-right and left side of the hole. This indicates
+that the material is undergoing significant plastic deformation in the regions,
+leading to a localized necking effect. 
+
+%% PEEQ
+\begin{figure}[H]
+    \centering
+    \begin{minipage}{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{images/Q3-3/PEEQ_1.png}
+        \caption*{(a) Equivalent plastic strain, Frame 1}
+        \vspace{2em}
+    \end{minipage}
+    \begin{minipage}{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{images/Q3-3/PEEQ_2.png}
+        \caption*{(b) Equivalent plastic strain, Frame 2}
+        \vspace{2em}
+    \end{minipage}
+    \begin{minipage}{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{images/Q3-3/PEEQ_3.png}
+        \caption*{(c) Equivalent plastic strain, Frame 3}
+    \end{minipage}
+    \begin{minipage}{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{images/Q3-3/PEEQ_4.png}
+        \caption*{(d) Equivalent plastic strain, Frame 4}
+    \end{minipage}
+    \caption{Contour plots of equivalent plastic strain at four representative time frames from the embedded J2 simulation, illustrating the progression of plastic deformation and localization.}
+    \label{fig:J2-Abaqus-PEEQ}
+\end{figure}
+\newpage
+\textit{$\dots$From the UMAT simulation, plot the distribution of the relevant stress and plastic strain
+components for the final time, indicating the meaning of the different SDVs, showing the
+maximum and minimum location, then discussing the results for different regions.}
+\vspace{1em}
+
+\begin{figure}[H]
+    \centering
+    \begin{minipage}{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{images/Q3-4/SDV1.png}
+        \caption*{SDV1: $\varepsilon_{11}^{e}$}
+    \end{minipage}
+    \begin{minipage}{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{images/Q3-4/SDV2.png}
+        \caption*{SDV2: $\varepsilon_{22}^{e}$}
+    \end{minipage}
+    \caption{SDV1 and SDV2: Distributions of the first and second state-dependent variables at the final simulation time, showing relevant stress/plastic strain components and internal variables. Maximum and minimum locations are indicated.}
+    \label{fig:SDV1-2}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \begin{minipage}{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{images/Q3-4/SDV3.png}
+        \caption*{SDV3: $\varepsilon_{33}^{e}$}
+    \end{minipage}
+    \begin{minipage}{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{images/Q3-4/SDV4.png}
+        \caption*{SDV4: $\gamma_{12}^{e}$}
+    \end{minipage}
+    \caption{SDV3 and SDV4: Distributions of the third and fourth state-dependent variables at the final simulation time, indicating mechanical quantities and localization effects.}
+    \label{fig:SDV3-4}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \begin{minipage}{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{images/Q3-4/SDV5.png}
+        \caption*{SDV5: $\varepsilon_{11}^{p}$}
+    \end{minipage}
+    \begin{minipage}{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{images/Q3-4/SDV6.png}
+        \caption*{SDV6: $\varepsilon_{22}^{p}$}
+    \end{minipage}
+    \caption{SDV5 and SDV6: Distributions of the fifth and sixth state-dependent variables at the final simulation time, highlighting regions of maximum/minimum and mechanical response evolution.}
+    \label{fig:SDV5-6}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \begin{minipage}{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{images/Q3-4/SDV7.png}
+        \caption*{SDV7: $\varepsilon_{33}^{p}$}
+    \end{minipage}
+    \begin{minipage}{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{images/Q3-4/SDV8.png}
+        \caption*{SDV8: $\gamma_{12}^{p}$}
+    \end{minipage}
+    \caption{SDV7 and SDV8: Distributions of the seventh and eighth state-dependent variables at the final simulation time, showing spatial variation and marked extrema.}
+    \label{fig:SDV7-8}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+        \includegraphics[width=0.7\textwidth]{images/Q3-4/SDV9.png}
+        \caption{SDV9: Distribution of the ninth state-dependent variable (SDV9): $\overline{\varepsilon}^{p}$}
+        \label{fig:SDV9}
+\end{figure}
+\vspace{1em}
+\hspace{2em}Figure~\ref{fig:SDV1-2} until figure~\ref{fig:SDV9} show the contour plot of all State Dependent Variables (SDVs)
+at the final simulation time from the J2-UMAT model. For SDV1 until SDV4, these show the parameter components
+in elastic region, whereas SDV1, SDV2, and SDV3 represent the normal elastic strain components, 
+and SDV4 represents the shear elastic strain component. Then SDV5 until SDV8 show the 
+parameter components in plastic region, where SDV5, SDV6, and SDV7 represent the normal plastic strain components,
+and SDV8 represents the shear plastic strain component. Finally, SDV9 represents the equivalent plastic strain (PEEQ), which is a scalar
+measure of the accumulated plastic deformation.
+
+\hspace{2em}The first observation is that the maximum and minimum
+values for each SDV are located in different regions of the plate. As SDV1 and SDV5 is compared,
+The largest elastic and plastic strain for both cases is at compressive state. This can be look, whereas a notch
+concentration are generated in the left and right side edge of the hole. Hence, the compressive state is caused
+by the Poisson effect, where the material tends to shrink laterally when
+stretched along the load direction. Hence, both elastic and plastic distribution show an agreement,
+showing the dominated compressive state in the same region, despite the maximum 
+compressive stress at SDV1 located also near the minimum stress. 
+
+\hspace{2em}For SDV2 and SDV6, it is clear that these strain state are measured in the same direction as the loading. Where, it is shows
+a deformation in y direction.
+Therefore, the maximum stress for both elastic and plastic state, respectively,
+showing a tensile state, which is suitable with the loading direction. Whereas, 
+the maximum tensile stress is located at the 
+left and right side edge of the hole for the elastic and plastic state. For both state, 
+the maximum compressive stress also located at the same region, which is at the 
+upper and lower edge of the hole. By here, both elastic and plastic state have shared the same agreement
+with the maximum and minimum stress location, as well as the stress distribution behavior.
+
+\hspace{2em}For SDV3 and SDV7, 
+these strain state are measured in the out-of-plane direction, since the model is using 
+a plane strain condition. Where here, a Poisson's effect is also observed, since the stress state is
+showing the opposite behavior compared to SDV2 and SDV6. Where for instance in the upper and lower region, the stress 
+state showing a tensile for SDV7 and SDV3, while for SDV2 and SDV6 showing a compressive state. This is clearly
+suitable with the Poisson's effect relation, where the material tends to 
+expand in the out-of-plane direction when compressed in the loading direction, 
+and vice versa.
+
+\hspace{2em}For SDV4 and SDV8, these strain state are measured in shear direction. These can be seen that
+the maximum and minimum shear strain for both elastic and plastic state are located in
+the same region, which is at the upper left and upper right side edge of the hole, respectively. From this agreement, despite
+the shear strain distribution is still dominated by the elastic state, the material is already
+deformed plastically but in a smaller region which is shown in SDV8. 
+
+\hspace{2em}Finally, for SDV9, this shows the equivalent plastic strain (PEEQ)
+distribution, which is a scalar measure of the accumulated plastic deformation. Hence, it 
+can be seen that the distribution is similar to SDV6, since the dominated plastic strain cause by the
+loading to the direction of y-axis. Here, it also shows the same location of the plastic strain, which
+is at the left and right side edge of the hole.
+
+
+
+\section*{Conclusion}
+To sum up everything that have been analyzed and gathered in this study, 
+here are some several key takeaways from this small case study:
+\begin{enumerate}
+    \item \textbf{Mesh Convergence and Optimization:} The Mesh
+    convergence study revealed that with the designed mesh configuration
+    and shape dimension as in figure~\ref{fig:MeshPartitioning}, a global and local
+    mesh size of 0.8 mm and 0.4 mm respectively (mesh number 3) is sufficient to capture the Stress
+    concentration Factor ($K_t$) accurately, according to the agreement of the effective $K_t$
+    classical value that shows in figure~\ref{fig:Kt_Graph}. 
+    \item \textbf{Symmetry Utilization:} By utilizing symmetry in both geometry and boundary conditions,
+    a simplified model was proposed that significantly reduced computational 
+    cost and simulation time, while still accurately representing the full model's stress distribution, as shown in figure~\ref{fig:QuadModel_StressContour}.
+    \item \textbf{Hardening Mechanisms:} The investigation of 
+    isotropic and kinematic hardening models under cyclic loading revealed 
+    distinct material responses for both mechanism, as well for the combined hardening. Isotropic shows a expansion
+    of the yield surface, while kinematic shows a translation of the yield surface.
+    \item \textbf{UMAT Implementation:} The implementation of a J2 plasticity 
+    UMAT shows the exact results as the embedded J2 model in Abaqus, as shown in the true stress-strain curve
+    comparison. This indicates the UMAT's capability to accurately model 
+    plasticity behavior.
+\end{enumerate}
+
+\end{document}
+
