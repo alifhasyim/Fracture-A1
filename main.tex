@@ -97,50 +97,36 @@ Parameter for 2nd question:
 \vspace{1em}
 
 
-\section{Introduction}
-\hspace*{2em}For this second assignment, mechanical response analysis will be conducted using a
-simple squared geometry model with a circular hole in the center. Hence, the analysis will be 
-divided into three tasks. The first task is mesh sensitivity analysis, where the main goal of this first 
-task is to see the influence of variety of mesh sizes to the captured stress concentration generation along the defined line
-from the edge of the circular hole until the opposite edge of the plate. Then there's 
-come the second task, where the focus will be to investigate the isotropic and kinematic hardening 
-effect to its mechanical response. The last task is a subroutine implementation, where the objective
-is to point out the difference between the standard and UMAT results. 
+\section{Introduction} 
+In this first assignment, the main focus will be on performing crack analysis
+using finite element method (FEM) in Abaqus software using two approaches. The first
+method is to perform a pre-defined crack analysis without separation between two materials,
+whereas the area around the crack tip will be evaluated to obtain the behavior of the stress field. Hence, J-integral
+will be calculated based on the stress field using domain integral method to obtain the energy release quantity. The key takeaway from this
+is to find the stable value of J-integral based on the contour integral surrounding the crack, which will be used
+as a reference value for the crack initiation value.
 
-\hspace*{2em}In this following section, each question will systematically will be addressed in the assignment,
-providing the simulation set-up model, schematic, and relevant figures or graphs to support the
-analysis. All calculations and results are based on the provided data and the author’s
-unique identification number. Numerical analysis will be performed using Abaqus CAE
-with an appropriate boundary condition and settings. 
-
+The second task is to analyze crack propagation using the cohesive zone method. Hence, some
+cohesive elements will be defined along the pre-defined crack path with the 
+cohesive parameters. From this analysis, a traction-separation curve will be obtained
+to visualize the stress-displacement phenomenon of the seperation events. 
 
 \section{Set up of the Model}
-\hspace*{2em}For the model setup, 2D planar-deformable shell-model will be used for the plate with the specified geometry, boundary condition, material properties, and mesh.  
-\subsection{Geometry and Boundary Conditions}
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.6\textwidth]{images/GEO_Base.png}
-    \caption{Baseline plate geometry with defined material A with thickness $t = 1 \;\text{mm}$. Two boundary conditions are applied, which are the 
-        fixed support restriction in y direction on the bottom line of the plate, fixed support point on the bottom right point restriction to 
-        x direction, and stress constant distribution along the top plate line with value of $\sigma_{nominal} = 1 \;\text{MPa}$}
-\end{figure}
 
 \subsection{Material Properties}
-\hspace*{2em}The material properties used in the analysis are provided in the task definition. However, 
-some parameters must be manually calculated based on the author's Immatrikulation Nummer in the very first section.
 
 \begin{table}[H]
-    \centering
-    \caption{Elastic properties for Q1.}
-    \label{tab:materialQ1-properties}
-    \begin{tabular}{ll}
-        \toprule
-        E (GPa) & $\nu$ (Poisson's Ratio) \\
-        \midrule
-        \multicolumn{1}{c}{240} & \multicolumn{1}{c}{0.3} \\
-        \bottomrule
-    \end{tabular}
+\centering
+\caption{Elastic properties for Q1.}
+\label{tab:materialQ1-properties}
+\begin{tabular}{ll}
+    \toprule
+    E (GPa) & $\nu$ (Poisson's Ratio) \\
+    \midrule
+    \multicolumn{1}{c}{240} & \multicolumn{1}{c}{0.3} \\
+    \bottomrule
+\end{tabular}
 \end{table}
 
 \begin{table}[H]
