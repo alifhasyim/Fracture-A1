@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (MiKTeX 25.4) (preloaded format=xelatex 2025.12.2)  24 DEC 2025 18:40
+This is XeTeX, Version 3.141592653-2.6-0.999997 (MiKTeX 25.4) (preloaded format=xelatex 2025.12.2)  25 DEC 2025 23:39
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -663,13 +663,15 @@ Package biblatex Info: Reference segment=0 on input line 61.
 ]
 
 [2]
+
+[3]
 File: images/MESH_Base.png Graphic file (type bmp)
 <images/MESH_Base.png>
 
 
-[3]
-
 [4]
+
+[5]
 File: images/Mesh1.png Graphic file (type bmp)
 <images/Mesh1.png>
 File: images/Mesh2.png Graphic file (type bmp)
@@ -688,9 +690,9 @@ File: images/Mesh8.png Graphic file (type bmp)
 <images/Mesh8.png>
 
 
-[5]
-
 [6]
+
+[7]
 File: images/S22_Mesh1.png Graphic file (type bmp)
 <images/S22_Mesh1.png>
 File: images/S22_Mesh2.png Graphic file (type bmp)
@@ -709,65 +711,65 @@ File: images/S22_Mesh8.png Graphic file (type bmp)
 <images/S22_Mesh8.png>
 
 
-[7]
-
 [8]
+
+[9]
 File: images/StressConc.png Graphic file (type bmp)
 <images/StressConc.png>
 File: images/Kt.png Graphic file (type bmp)
 <images/Kt.png>
 
 
-[9]
+[10]
 File: images/Kt_Graph.png Graphic file (type bmp)
 <images/Kt_Graph.png>
 
 
-[10]
+[11]
 File: images/quad_mesh.png Graphic file (type bmp)
 <images/quad_mesh.png>
 File: images/quad.png Graphic file (type bmp)
 <images/quad.png>
 
 
-[11]
+[12]
 File: images/S22_Mesh3.png Graphic file (type bmp)
 <images/S22_Mesh3.png>
 File: images/S22_Mesh3_Quad.png Graphic file (type bmp)
 <images/S22_Mesh3_Quad.png>
 
 
-[12]
+[13]
 File: visualize_tensileGraph/res/cyclic_amplitude.png Graphic file (type bmp)
 <visualize_tensileGraph/res/cyclic_amplitude.png>
 
 
-[13]
+[14]
 File: visualize_tensileGraph/res/Iso_Hard.png Graphic file (type bmp)
 <visualize_tensileGraph/res/Iso_Hard.png>
 
 
-[14]
+[15]
 File: visualize_tensileGraph/res/Kin_Hard.png Graphic file (type bmp)
 <visualize_tensileGraph/res/Kin_Hard.png>
 
 
-[15]
+[16]
 File: visualize_tensileGraph/res/Iso_Kinem_Comparison.png Graphic file (type bm
 p)
 <visualize_tensileGraph/res/Iso_Kinem_Comparison.png>
 
 
-[16]
+[17]
 File: visualize_tensileGraph/res/Com_Hard.png Graphic file (type bmp)
 <visualize_tensileGraph/res/Com_Hard.png>
 File: visualize_tensileGraph/res/Hardening_Graph.png Graphic file (type bmp)
 <visualize_tensileGraph/res/Hardening_Graph.png>
 
 
-[17]
-
 [18]
+
+[19]
 (C:\Users\Nutzer\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang1.sty
 File: lstlang1.sty 2024/09/23 1.10c listings language file
 ) (C:\Users\Nutzer\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang1.st
@@ -775,37 +777,37 @@ y
 File: lstlang1.sty 2024/09/23 1.10c listings language file
 )
 
-Package Listings Warning: Text dropped after begin of listing on input line 667
+Package Listings Warning: Text dropped after begin of listing on input line 670
 .
 
 
-Overfull \hbox (5.44981pt too wide) in paragraph at lines 668--669
+Overfull \hbox (5.44981pt too wide) in paragraph at lines 671--672
 [][][][][][] 
  []
 
 
-Overfull \hbox (5.44981pt too wide) in paragraph at lines 676--677
+Overfull \hbox (5.44981pt too wide) in paragraph at lines 679--680
 [][][][][][] 
  []
 
 
-Package Listings Warning: Text dropped after begin of listing on input line 691
+Package Listings Warning: Text dropped after begin of listing on input line 694
 .
 
 
-Package Listings Warning: Text dropped after begin of listing on input line 714
+Package Listings Warning: Text dropped after begin of listing on input line 717
 .
 
 
-
-[19]
 
 [20]
+
+[21]
 File: visualize_tensileGraph/res/TrueStressStrain.png Graphic file (type bmp)
 <visualize_tensileGraph/res/TrueStressStrain.png>
 
 
-[21]
+[22]
 File: images/Q3-3/MISES_1.png Graphic file (type bmp)
 <images/Q3-3/MISES_1.png>
 File: images/Q3-3/MISES_2.png Graphic file (type bmp)
@@ -816,7 +818,7 @@ File: images/Q3-3/MISES_4.png Graphic file (type bmp)
 <images/Q3-3/MISES_4.png>
 
 
-[22]
+[23]
 File: images/Q3-3/PEEQ_1.png Graphic file (type bmp)
 <images/Q3-3/PEEQ_1.png>
 File: images/Q3-3/PEEQ_2.png Graphic file (type bmp)
@@ -827,7 +829,7 @@ File: images/Q3-3/PEEQ_4.png Graphic file (type bmp)
 <images/Q3-3/PEEQ_4.png>
 
 
-[23]
+[24]
 File: images/Q3-4/SDV1.png Graphic file (type bmp)
 <images/Q3-4/SDV1.png>
 File: images/Q3-4/SDV2.png Graphic file (type bmp)
@@ -842,7 +844,7 @@ File: images/Q3-4/SDV6.png Graphic file (type bmp)
 <images/Q3-4/SDV6.png>
 
 
-[24]
+[25]
 File: images/Q3-4/SDV7.png Graphic file (type bmp)
 <images/Q3-4/SDV7.png>
 File: images/Q3-4/SDV8.png Graphic file (type bmp)
@@ -851,11 +853,11 @@ File: images/Q3-4/SDV9.png Graphic file (type bmp)
 <images/Q3-4/SDV9.png>
 
 
-[25]
-
 [26]
 
-[27] (main.aux)
+[27]
+
+[28] (main.aux)
  ***********
 LaTeX2e <2025-06-01>
 L3 programming layer <2025-05-26>
@@ -871,10 +873,10 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 Here is how much of TeX's memory you used:
  14718 strings out of 403341
  266224 string characters out of 5462914
- 1143002 words of memory out of 5000000
+ 1143003 words of memory out of 5000000
  42882 multiletter control sequences out of 15000+600000
  632393 words of font info for 72 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  60i,10n,66p,844b,1326s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on main.pdf (27 pages).
+Output written on main.pdf (28 pages).
