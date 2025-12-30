@@ -174,28 +174,59 @@ directions, the maximum nominal stress, and the failure separation displacement.
     \centering
     \includegraphics[width=0.9\textwidth]{images/GeoDef.png}
     \caption{Geometry and boundary definition of the plate with horizontal crack on the left-middle side of the plate. The geometry parameters are defined
-    in the first section of the report, whereas b = 2.4 mm, h = 1.536 mm, and l = 0.504 mm.}
+    in the first section of the report, whereas b = 2.4 mm, h = 1.536 mm, and l = 0.504 mm. This dimension configuration is used for both
+    question 1 and 2.}
     \label{fig:GeoDef}
 \end{figure}
 
 \hspace{2em}Figure~\ref{fig:GeoDef} shows the geometry and boundary conditions of the plate with horizontal crack. Hence, the displacement will
 be applied on the left side of the plate, whereas the left-top edge will have displacement to the y-positive direction and left-bottom edge
-will have the opposite direction. The right side of the plate will be fixed in both x and y directions. The crack is designated
-as in the red color with some certain length. 
+will have the opposite direction. The right side of the plate will be fixed in both x and y directions. For the first task,
+a crack with length of $l$ is defined on the left-middle side of the plate. This definition
+will ensure a separation, meaning that the nodes are separated with this crack line.
+
+\hspace{2em}For the second task, cohesive area is defined along the C length from the crack tip until the
+edge of the right side of the plate. To achieve this, two separate geometry are created. This consist of top and bottom plate,
+which then both of them is connected using contact definition. Hence, the contact is defined as a cohesive contact, 
+where it spans through the C line according to figure~\ref{fig:GeoDef}. The cohesive parameters are defined as in table~\ref{tab:CohesiveQ2}.
+Since the cohesive area is defined only in the C line, therefore the non-contact area (hence is $l_{crack}$) is consider
+as the crack initiation length.
 
 \subsection{Mesh Set Up}
+
+\hspace{2em}The next step after setting up the geometry and boundary condition is the mesh definition. Since there is
+no constraint in terms of element numbers as well as computational power restriction, a fine mesh is used for both questions.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{images/Mesh_Task1.png}
+    \caption{Mesh configuration for the first task. A standard and linear CPS4 (4-node bilinear plane stress quadrilateral) mesh configuration is implemented 
+    with the possibility to change to plane stress and plane strain condition, without reduced integration mode. Additional refinement 
+    is added to the crack tip with more structured mesh wit 15 nodes mesh partitioning.}
+    \label{fig:Mesh_Task1}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{images/Mesh_Task2.png}
+    \caption{Final mesh configuration for both question 1 and question 2. The mesh is created using CPS4 element type, which is a 4-node bilinear plane stress quadrilateral element.
+    The mesh is refined around the crack tip area to accurately capture the stress concentration effects.}
+    \label{fig:Mesh_Task2}
+\end{figure}
 
 \newpage
 \section*{Results and Discussion}
 
-\subsection*{Q1: Mesh Sensitivity Analysis of plate with circular hole}
+\subsection*{Q1: Elastic Analysis}
 
 \vspace{1em}
-\textit{$\dots$ Create the model as shown in figure 1, using the face partitioning illustrated in figure 2, 
-and apply the following assumptions: small deformations, plane stress conditions, 
-and a homogeneous, isotropic, linear elastic material. For each mesh size specified in 
-table 1, create a separate Job. Apply the local mesh size around the hole and use the 
-global mesh size for the remaining regions of the plate.}
+\textit{$\dots$ Using the elastic material parameters, 
+generate a contour plot of the von Mises stress near the crack 
+tip. Extract and plot the relevant stress components
+along path C (see Figure 1) for both plane strain and plane 
+stress conditions. Compare and discuss the differences between 
+the two cases.}
+
 \vspace{1em}
 \begin{figure}[H]
     \centering
