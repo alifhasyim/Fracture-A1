@@ -1,101 +1,119 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (MiKTeX 25.4) (preloaded format=xelatex 2025.12.2)  30 DEC 2025 10:02
+This is XeTeX, Version 3.141592653-2.6-0.999997 (MiKTeX 25.4) (preloaded format=xelatex 2025.11.27)  30 DEC 2025 12:06
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**"c:/Users/Nutzer/Documents/_CompEng-Master/05 - 02 Fracture Mechanics/_Assign
-ment1/Report/Fracture-A1/main.tex"
+**"c:/Users/Bagus Alifah Hasyim/Documents/Computational Engineering RUB/05 - 01
+ Fracture Mechanics/_Assignment 1/Report/Fracture-A1/main.tex"
 
-(c:/Users/Nutzer/Documents/_CompEng-Master/05 - 02 Fracture Mechanics/_Assignme
-nt1/Report/Fracture-A1/main.tex
-LaTeX2e <2025-06-01>
-L3 programming layer <2025-05-26>
-(C:\Users\Nutzer\AppData\Local\Programs\MiKTeX\tex/latex/base\article.cls
-Document Class: article 2025/01/22 v1.4n Standard LaTeX document class
-(C:\Users\Nutzer\AppData\Local\Programs\MiKTeX\tex/latex/base\size12.clo
-File: size12.clo 2025/01/22 v1.4n Standard LaTeX file (size option)
+(c:/Users/Bagus Alifah Hasyim/Documents/Computational Engineering RUB/05 - 01 F
+racture Mechanics/_Assignment 1/Report/Fracture-A1/main.tex
+LaTeX2e <2024-11-01> patch level 2
+L3 programming layer <2025-04-29>
+
+(C:\Users\Bagus Alifah Hasyim\AppData\Local\Programs\MiKTeX\tex/latex/base\arti
+cle.cls
+Document Class: article 2024/06/29 v1.4n Standard LaTeX document class
+
+(C:\Users\Bagus Alifah Hasyim\AppData\Local\Programs\MiKTeX\tex/latex/base\size
+12.clo
+File: size12.clo 2024/06/29 v1.4n Standard LaTeX file (size option)
 )
-\c@part=\count271
-\c@section=\count272
-\c@subsection=\count273
-\c@subsubsection=\count274
-\c@paragraph=\count275
-\c@subparagraph=\count276
-\c@figure=\count277
-\c@table=\count278
+\c@part=\count268
+\c@section=\count269
+\c@subsection=\count270
+\c@subsubsection=\count271
+\c@paragraph=\count272
+\c@subparagraph=\count273
+\c@figure=\count274
+\c@table=\count275
 \abovecaptionskip=\skip49
 \belowcaptionskip=\skip50
-\bibindent=\dimen148
+\bibindent=\dimen146
 )
-(C:\Users\Nutzer\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphicx.sty
-Package: graphicx 2024/12/31 v1.2e Enhanced LaTeX Graphics (DPC,SPQR)
+(C:\Users\Bagus Alifah Hasyim\AppData\Local\Programs\MiKTeX\tex/latex/graphics\
+graphicx.sty
+Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
 
-(C:\Users\Nutzer\AppData\Local\Programs\MiKTeX\tex/latex/graphics\keyval.sty
+(C:\Users\Bagus Alifah Hasyim\AppData\Local\Programs\MiKTeX\tex/latex/graphics\
+keyval.sty
 Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
 \KV@toks@=\toks17
 )
-(C:\Users\Nutzer\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphics.sty
+(C:\Users\Bagus Alifah Hasyim\AppData\Local\Programs\MiKTeX\tex/latex/graphics\
+graphics.sty
 Package: graphics 2024/08/06 v1.4g Standard LaTeX Graphics (DPC,SPQR)
 
-(C:\Users\Nutzer\AppData\Local\Programs\MiKTeX\tex/latex/graphics\trig.sty
+(C:\Users\Bagus Alifah Hasyim\AppData\Local\Programs\MiKTeX\tex/latex/graphics\
+trig.sty
 Package: trig 2023/12/02 v1.11 sin cos tan (DPC)
 )
-(C:\Users\Nutzer\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\graphics.
-cfg
+(C:\Users\Bagus Alifah Hasyim\AppData\Local\Programs\MiKTeX\tex/latex/graphics-
+cfg\graphics.cfg
 File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
 Package graphics Info: Driver file: xetex.def on input line 106.
 
-(C:\Users\Nutzer\AppData\Local\Programs\MiKTeX\tex/latex/graphics-def\xetex.def
+(C:\Users\Bagus Alifah Hasyim\AppData\Local\Programs\MiKTeX\tex/latex/graphics-
+def\xetex.def
 File: xetex.def 2022/09/22 v5.0n Graphics/color driver for xetex
 ))
-\Gin@req@height=\dimen149
-\Gin@req@width=\dimen150
+\Gin@req@height=\dimen147
+\Gin@req@width=\dimen148
 )
-(C:\Users\Nutzer\AppData\Local\Programs\MiKTeX\tex/latex/caption\caption.sty
+(C:\Users\Bagus Alifah Hasyim\AppData\Local\Programs\MiKTeX\tex/latex/caption\c
+aption.sty
 Package: caption 2023/08/05 v3.6o Customizing captions (AR)
 
-(C:\Users\Nutzer\AppData\Local\Programs\MiKTeX\tex/latex/caption\caption3.sty
+(C:\Users\Bagus Alifah Hasyim\AppData\Local\Programs\MiKTeX\tex/latex/caption\c
+aption3.sty
 Package: caption3 2023/07/31 v2.4d caption3 kernel (AR)
-\caption@tempdima=\dimen151
-\captionmargin=\dimen152
-\caption@leftmargin=\dimen153
-\caption@rightmargin=\dimen154
-\caption@width=\dimen155
-\caption@indent=\dimen156
-\caption@parindent=\dimen157
-\caption@hangindent=\dimen158
+\caption@tempdima=\dimen149
+\captionmargin=\dimen150
+\caption@leftmargin=\dimen151
+\caption@rightmargin=\dimen152
+\caption@width=\dimen153
+\caption@indent=\dimen154
+\caption@parindent=\dimen155
+\caption@hangindent=\dimen156
 Package caption Info: Standard document class detected.
 )
-\c@caption@flags=\count279
-\c@continuedfloat=\count280
-) (C:\Users\Nutzer\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsmath.sty
-Package: amsmath 2025/05/18 v2.17x AMS math features
+\c@caption@flags=\count276
+\c@continuedfloat=\count277
+)
+(C:\Users\Bagus Alifah Hasyim\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\a
+msmath.sty
+Package: amsmath 2024/11/05 v2.17t AMS math features
 \@mathmargin=\skip51
 
 For additional information on amsmath, use the `?' option.
-(C:\Users\Nutzer\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amstext.sty
-Package: amstext 2024/11/17 v2.01 AMS text
 
-(C:\Users\Nutzer\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsgen.sty
+(C:\Users\Bagus Alifah Hasyim\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\a
+mstext.sty
+Package: amstext 2021/08/26 v2.01 AMS text
+
+(C:\Users\Bagus Alifah Hasyim\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\a
+msgen.sty
 File: amsgen.sty 1999/11/30 v2.0 generic functions
 \@emptytoks=\toks18
-\ex@=\dimen159
+\ex@=\dimen157
 ))
-(C:\Users\Nutzer\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsbsy.sty
+(C:\Users\Bagus Alifah Hasyim\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\a
+msbsy.sty
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
-\pmbraise@=\dimen160
+\pmbraise@=\dimen158
 )
-(C:\Users\Nutzer\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsopn.sty
+(C:\Users\Bagus Alifah Hasyim\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\a
+msopn.sty
 Package: amsopn 2022/04/08 v2.04 operator names
 )
-\inf@bad=\count281
+\inf@bad=\count278
 LaTeX Info: Redefining \frac on input line 233.
-\uproot@=\count282
-\leftroot@=\count283
+\uproot@=\count279
+\leftroot@=\count280
 LaTeX Info: Redefining \overline on input line 398.
 LaTeX Info: Redefining \colon on input line 409.
-\classnum@=\count284
-\DOTSCASE@=\count285
+\classnum@=\count281
+\DOTSCASE@=\count282
 LaTeX Info: Redefining \ldots on input line 495.
 LaTeX Info: Redefining \dots on input line 498.
 LaTeX Info: Redefining \cdots on input line 619.
@@ -105,159 +123,179 @@ LaTeX Info: Redefining \big on input line 721.
 LaTeX Info: Redefining \Big on input line 722.
 LaTeX Info: Redefining \bigg on input line 723.
 LaTeX Info: Redefining \Bigg on input line 724.
-\big@size=\dimen161
+\big@size=\dimen159
 LaTeX Font Info:    Redeclaring font encoding OML on input line 742.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 743.
-\macc@depth=\count286
+\macc@depth=\count283
 LaTeX Info: Redefining \bmod on input line 904.
 LaTeX Info: Redefining \pmod on input line 909.
 LaTeX Info: Redefining \smash on input line 939.
 LaTeX Info: Redefining \relbar on input line 969.
 LaTeX Info: Redefining \Relbar on input line 970.
-\c@MaxMatrixCols=\count287
+\c@MaxMatrixCols=\count284
 \dotsspace@=\muskip17
-\c@parentequation=\count288
-\dspbrk@lvl=\count289
+\c@parentequation=\count285
+\dspbrk@lvl=\count286
 \tag@help=\toks19
-\row@=\count290
-\column@=\count291
-\maxfields@=\count292
+\row@=\count287
+\column@=\count288
+\maxfields@=\count289
 \andhelp@=\toks20
-\eqnshift@=\dimen162
-\alignsep@=\dimen163
-\tagshift@=\dimen164
-\tagwidth@=\dimen165
-\totwidth@=\dimen166
-\lineht@=\dimen167
+\eqnshift@=\dimen160
+\alignsep@=\dimen161
+\tagshift@=\dimen162
+\tagwidth@=\dimen163
+\totwidth@=\dimen164
+\lineht@=\dimen165
 \@envbody=\toks21
 \multlinegap=\skip52
 \multlinetaggap=\skip53
 \mathdisplay@stack=\toks22
-LaTeX Info: Redefining \[ on input line 2949.
-LaTeX Info: Redefining \] on input line 2950.
+LaTeX Info: Redefining \[ on input line 2953.
+LaTeX Info: Redefining \] on input line 2954.
 )
-(C:\Users\Nutzer\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.sty
+(C:\Users\Bagus Alifah Hasyim\AppData\Local\Programs\MiKTeX\tex/latex/geometry\
+geometry.sty
 Package: geometry 2020/01/02 v5.9 Page Geometry
 
-(C:\Users\Nutzer\AppData\Local\Programs\MiKTeX\tex/generic/iftex\ifvtex.sty
+(C:\Users\Bagus Alifah Hasyim\AppData\Local\Programs\MiKTeX\tex/generic/iftex\i
+fvtex.sty
 Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
 
-(C:\Users\Nutzer\AppData\Local\Programs\MiKTeX\tex/generic/iftex\iftex.sty
+(C:\Users\Bagus Alifah Hasyim\AppData\Local\Programs\MiKTeX\tex/generic/iftex\i
+ftex.sty
 Package: iftex 2024/12/12 v1.0g TeX engine tests
 ))
-\Gm@cnth=\count293
-\Gm@cntv=\count294
-\c@Gm@tempcnt=\count295
-\Gm@bindingoffset=\dimen168
-\Gm@wd@mp=\dimen169
-\Gm@odd@mp=\dimen170
-\Gm@even@mp=\dimen171
-\Gm@layoutwidth=\dimen172
-\Gm@layoutheight=\dimen173
-\Gm@layouthoffset=\dimen174
-\Gm@layoutvoffset=\dimen175
+\Gm@cnth=\count290
+\Gm@cntv=\count291
+\c@Gm@tempcnt=\count292
+\Gm@bindingoffset=\dimen166
+\Gm@wd@mp=\dimen167
+\Gm@odd@mp=\dimen168
+\Gm@even@mp=\dimen169
+\Gm@layoutwidth=\dimen170
+\Gm@layoutheight=\dimen171
+\Gm@layouthoffset=\dimen172
+\Gm@layoutvoffset=\dimen173
 \Gm@dimlist=\toks23
 
-(C:\Users\Nutzer\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.cfg)
-) (C:\Users\Nutzer\AppData\Local\Programs\MiKTeX\tex/latex/float\float.sty
+(C:\Users\Bagus Alifah Hasyim\AppData\Local\Programs\MiKTeX\tex/latex/geometry\
+geometry.cfg))
+(C:\Users\Bagus Alifah Hasyim\AppData\Local\Programs\MiKTeX\tex/latex/float\flo
+at.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count296
+\c@float@type=\count293
 \float@exts=\toks24
 \float@box=\box55
 \@float@everytoks=\toks25
 \@floatcapt=\box56
 )
-(C:\Users\Nutzer\AppData\Local\Programs\MiKTeX\tex/latex/booktabs\booktabs.sty
+(C:\Users\Bagus Alifah Hasyim\AppData\Local\Programs\MiKTeX\tex/latex/booktabs\
+booktabs.sty
 Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
-\heavyrulewidth=\dimen176
-\lightrulewidth=\dimen177
-\cmidrulewidth=\dimen178
-\belowrulesep=\dimen179
-\belowbottomsep=\dimen180
-\aboverulesep=\dimen181
-\abovetopsep=\dimen182
-\cmidrulesep=\dimen183
-\cmidrulekern=\dimen184
-\defaultaddspace=\dimen185
-\@cmidla=\count297
-\@cmidlb=\count298
-\@aboverulesep=\dimen186
-\@belowrulesep=\dimen187
-\@thisruleclass=\count299
-\@lastruleclass=\count300
-\@thisrulewidth=\dimen188
-) (C:\Users\Nutzer\AppData\Local\Programs\MiKTeX\tex/latex/tools\longtable.sty
-Package: longtable 2024-12-18 v4.23 Multi-page Table package (DPC)
+\heavyrulewidth=\dimen174
+\lightrulewidth=\dimen175
+\cmidrulewidth=\dimen176
+\belowrulesep=\dimen177
+\belowbottomsep=\dimen178
+\aboverulesep=\dimen179
+\abovetopsep=\dimen180
+\cmidrulesep=\dimen181
+\cmidrulekern=\dimen182
+\defaultaddspace=\dimen183
+\@cmidla=\count294
+\@cmidlb=\count295
+\@aboverulesep=\dimen184
+\@belowrulesep=\dimen185
+\@thisruleclass=\count296
+\@lastruleclass=\count297
+\@thisrulewidth=\dimen186
+)
+(C:\Users\Bagus Alifah Hasyim\AppData\Local\Programs\MiKTeX\tex/latex/tools\lon
+gtable.sty
+Package: longtable 2024-10-27 v4.22 Multi-page Table package (DPC)
 \LTleft=\skip54
 \LTright=\skip55
 \LTpre=\skip56
 \LTpost=\skip57
-\LTchunksize=\count301
-\LTcapwidth=\dimen189
+\LTchunksize=\count298
+\LTcapwidth=\dimen187
 \LT@head=\box57
 \LT@firsthead=\box58
 \LT@foot=\box59
 \LT@lastfoot=\box60
 \LT@gbox=\box61
-\LT@cols=\count302
-\LT@rows=\count303
-\c@LT@tables=\count304
-\c@LT@chunks=\count305
+\LT@cols=\count299
+\LT@rows=\count300
+\c@LT@tables=\count301
+\c@LT@chunks=\count302
 \LT@p@ftn=\toks26
 )
-(C:\Users\Nutzer\AppData\Local\Programs\MiKTeX\tex/latex/setspace\setspace.sty
+(C:\Users\Bagus Alifah Hasyim\AppData\Local\Programs\MiKTeX\tex/latex/setspace\
+setspace.sty
 Package: setspace 2022/12/04 v6.7b set line spacing
-) (C:\Users\Nutzer\AppData\Local\Programs\MiKTeX\tex/latex/tools\indentfirst.st
-y
+)
+(C:\Users\Bagus Alifah Hasyim\AppData\Local\Programs\MiKTeX\tex/latex/tools\ind
+entfirst.sty
 Package: indentfirst 2023/07/02 v1.03 Indent first paragraph (DPC)
 )
-(C:\Users\Nutzer\AppData\Local\Programs\MiKTeX\tex/latex/titlesec\titlesec.sty
+(C:\Users\Bagus Alifah Hasyim\AppData\Local\Programs\MiKTeX\tex/latex/titlesec\
+titlesec.sty
 Package: titlesec 2025/01/04 v2.17 Sectioning titles
 \ttl@box=\box62
 \beforetitleunit=\skip58
 \aftertitleunit=\skip59
-\ttl@plus=\dimen190
-\ttl@minus=\dimen191
+\ttl@plus=\dimen188
+\ttl@minus=\dimen189
 \ttl@toksa=\toks27
-\titlewidth=\dimen192
-\titlewidthlast=\dimen193
-\titlewidthfirst=\dimen194
-) (C:\Users\Nutzer\AppData\Local\Programs\MiKTeX\tex/latex/listings\listings.st
-y
-\lst@mode=\count306
+\titlewidth=\dimen190
+\titlewidthlast=\dimen191
+\titlewidthfirst=\dimen192
+)
+(C:\Users\Bagus Alifah Hasyim\AppData\Local\Programs\MiKTeX\tex/latex/listings\
+listings.sty
+\lst@mode=\count303
 \lst@gtempboxa=\box63
 \lst@token=\toks28
-\lst@length=\count307
-\lst@currlwidth=\dimen195
-\lst@column=\count308
-\lst@pos=\count309
-\lst@lostspace=\dimen196
-\lst@width=\dimen197
-\lst@newlines=\count310
-\lst@lineno=\count311
-\lst@maxwidth=\dimen198
-(C:\Users\Nutzer\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstpatch.sty
+\lst@length=\count304
+\lst@currlwidth=\dimen193
+\lst@column=\count305
+\lst@pos=\count306
+\lst@lostspace=\dimen194
+\lst@width=\dimen195
+\lst@newlines=\count307
+\lst@lineno=\count308
+\lst@maxwidth=\dimen196
+
+(C:\Users\Bagus Alifah Hasyim\AppData\Local\Programs\MiKTeX\tex/latex/listings\
+lstpatch.sty
 File: lstpatch.sty 2024/09/23 1.10c (Carsten Heinz)
-) (C:\Users\Nutzer\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstmisc.sty
+)
+(C:\Users\Bagus Alifah Hasyim\AppData\Local\Programs\MiKTeX\tex/latex/listings\
+lstmisc.sty
 File: lstmisc.sty 2024/09/23 1.10c (Carsten Heinz)
-\c@lstnumber=\count312
-\lst@skipnumbers=\count313
+\c@lstnumber=\count309
+\lst@skipnumbers=\count310
 \lst@framebox=\box64
-) (C:\Users\Nutzer\AppData\Local\Programs\MiKTeX\tex/latex/listings\listings.cf
-g
+)
+(C:\Users\Bagus Alifah Hasyim\AppData\Local\Programs\MiKTeX\tex/latex/listings\
+listings.cfg
 File: listings.cfg 2024/09/23 1.10c listings configuration
 ))
 Package: listings 2024/09/23 1.10c (Carsten Heinz)
- (C:\Users\Nutzer\AppData\Local\Programs\MiKTeX\tex/latex/xcolor\xcolor.sty
+
+(C:\Users\Bagus Alifah Hasyim\AppData\Local\Programs\MiKTeX\tex/latex/xcolor\xc
+olor.sty
 Package: xcolor 2024/09/29 v3.02 LaTeX color extensions (UK)
 
-(C:\Users\Nutzer\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\color.cfg
+(C:\Users\Bagus Alifah Hasyim\AppData\Local\Programs\MiKTeX\tex/latex/graphics-
+cfg\color.cfg
 File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
 Package xcolor Info: Driver file: xetex.def on input line 274.
 
-(C:\Users\Nutzer\AppData\Local\Programs\MiKTeX\tex/latex/graphics\mathcolor.ltx
-)
+(C:\Users\Bagus Alifah Hasyim\AppData\Local\Programs\MiKTeX\tex/latex/graphics\
+mathcolor.ltx)
 Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1349.
 Package xcolor Info: Model `RGB' extended on input line 1365.
 Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1367.
@@ -266,107 +304,119 @@ Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1369.
 Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1370.
 Package xcolor Info: Model `Gray' substituted by `gray' on input line 1371.
 Package xcolor Info: Model `wave' substituted by `hsb' on input line 1372.
-) (C:\Users\Nutzer\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\pifont.sty
+)
+(C:\Users\Bagus Alifah Hasyim\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\pi
+font.sty
 Package: pifont 2020/03/25 PSNFSS-v9.3 Pi font support (SPQR) 
 LaTeX Font Info:    Trying to load font information for U+pzd on input line 63.
 
 
-(C:\Users\Nutzer\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\upzd.fd
+(C:\Users\Bagus Alifah Hasyim\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\up
+zd.fd
 File: upzd.fd 2001/06/04 font definitions for U/pzd.
 )
 LaTeX Font Info:    Trying to load font information for U+psy on input line 64.
 
 
-(C:\Users\Nutzer\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\upsy.fd
+(C:\Users\Bagus Alifah Hasyim\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\up
+sy.fd
 File: upsy.fd 2001/06/04 font definitions for U/psy.
 ))
-(C:\Users\Nutzer\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\biblatex.sty
+(C:\Users\Bagus Alifah Hasyim\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\
+biblatex.sty
 Package: biblatex 2024/03/21 v3.20 programmable bibliographies (PK/MW)
 
-(C:\Users\Nutzer\AppData\Local\Programs\MiKTeX\tex/generic/pdftexcmds\pdftexcmd
-s.sty
+(C:\Users\Bagus Alifah Hasyim\AppData\Local\Programs\MiKTeX\tex/generic/pdftexc
+mds\pdftexcmds.sty
 Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO
 )
 
-(C:\Users\Nutzer\AppData\Local\Programs\MiKTeX\tex/generic/infwarerr\infwarerr.
-sty
+(C:\Users\Bagus Alifah Hasyim\AppData\Local\Programs\MiKTeX\tex/generic/infware
+rr\infwarerr.sty
 Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
 )
-(C:\Users\Nutzer\AppData\Local\Programs\MiKTeX\tex/generic/ltxcmds\ltxcmds.sty
+(C:\Users\Bagus Alifah Hasyim\AppData\Local\Programs\MiKTeX\tex/generic/ltxcmds
+\ltxcmds.sty
 Package: ltxcmds 2023-12-04 v1.26 LaTeX kernel commands for general use (HO)
 )
 Package pdftexcmds Info: \pdf@primitive is available.
 Package pdftexcmds Info: \pdf@ifprimitive is available.
 Package pdftexcmds Info: \pdfdraftmode not found.
 )
-(C:\Users\Nutzer\AppData\Local\Programs\MiKTeX\tex/latex/etoolbox\etoolbox.sty
+(C:\Users\Bagus Alifah Hasyim\AppData\Local\Programs\MiKTeX\tex/latex/etoolbox\
+etoolbox.sty
 Package: etoolbox 2025/02/11 v2.5l e-TeX tools for LaTeX (JAW)
-\etb@tempcnta=\count314
+\etb@tempcnta=\count311
 )
-(C:\Users\Nutzer\AppData\Local\Programs\MiKTeX\tex/latex/kvoptions\kvoptions.st
-y
+(C:\Users\Bagus Alifah Hasyim\AppData\Local\Programs\MiKTeX\tex/latex/kvoptions
+\kvoptions.sty
 Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
 
-(C:\Users\Nutzer\AppData\Local\Programs\MiKTeX\tex/latex/kvsetkeys\kvsetkeys.st
-y
+(C:\Users\Bagus Alifah Hasyim\AppData\Local\Programs\MiKTeX\tex/latex/kvsetkeys
+\kvsetkeys.sty
 Package: kvsetkeys 2022-10-05 v1.19 Key value parser (HO)
-)) (C:\Users\Nutzer\AppData\Local\Programs\MiKTeX\tex/latex/logreq\logreq.sty
+))
+(C:\Users\Bagus Alifah Hasyim\AppData\Local\Programs\MiKTeX\tex/latex/logreq\lo
+greq.sty
 Package: logreq 2010/08/04 v1.0 xml request logger
-\lrq@indent=\count315
+\lrq@indent=\count312
 
-(C:\Users\Nutzer\AppData\Local\Programs\MiKTeX\tex/latex/logreq\logreq.def
+(C:\Users\Bagus Alifah Hasyim\AppData\Local\Programs\MiKTeX\tex/latex/logreq\lo
+greq.def
 File: logreq.def 2010/08/04 v1.0 logreq spec v1.0
 ))
-(C:\Users\Nutzer\AppData\Local\Programs\MiKTeX\tex/latex/base\ifthen.sty
+(C:\Users\Bagus Alifah Hasyim\AppData\Local\Programs\MiKTeX\tex/latex/base\ifth
+en.sty
 Package: ifthen 2024/03/16 v1.1e Standard LaTeX ifthen package (DPC)
 )
-(C:\Users\Nutzer\AppData\Local\Programs\MiKTeX\tex/latex/url\url.sty
+(C:\Users\Bagus Alifah Hasyim\AppData\Local\Programs\MiKTeX\tex/latex/url\url.s
+ty
 \Urlmuskip=\muskip18
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
-\c@tabx@nest=\count316
-\c@listtotal=\count317
-\c@listcount=\count318
-\c@liststart=\count319
-\c@liststop=\count320
-\c@citecount=\count321
-\c@citetotal=\count322
-\c@multicitecount=\count323
-\c@multicitetotal=\count324
-\c@instcount=\count325
-\c@maxnames=\count326
-\c@minnames=\count327
-\c@maxitems=\count328
-\c@minitems=\count329
-\c@citecounter=\count330
-\c@maxcitecounter=\count331
-\c@savedcitecounter=\count332
-\c@uniquelist=\count333
-\c@uniquename=\count334
-\c@refsection=\count335
-\c@refsegment=\count336
-\c@maxextratitle=\count337
-\c@maxextratitleyear=\count338
-\c@maxextraname=\count339
-\c@maxextradate=\count340
-\c@maxextraalpha=\count341
-\c@abbrvpenalty=\count342
-\c@highnamepenalty=\count343
-\c@lownamepenalty=\count344
-\c@maxparens=\count345
-\c@parenlevel=\count346
-\blx@tempcnta=\count347
-\blx@tempcntb=\count348
-\blx@tempcntc=\count349
-\c@blx@maxsection=\count350
-\blx@maxsegment@0=\count351
-\blx@notetype=\count352
-\blx@parenlevel@text=\count353
-\blx@parenlevel@foot=\count354
-\blx@sectionciteorder@0=\count355
-\blx@sectionciteorderinternal@0=\count356
-\blx@entrysetcounter=\count357
-\blx@biblioinstance=\count358
+\c@tabx@nest=\count313
+\c@listtotal=\count314
+\c@listcount=\count315
+\c@liststart=\count316
+\c@liststop=\count317
+\c@citecount=\count318
+\c@citetotal=\count319
+\c@multicitecount=\count320
+\c@multicitetotal=\count321
+\c@instcount=\count322
+\c@maxnames=\count323
+\c@minnames=\count324
+\c@maxitems=\count325
+\c@minitems=\count326
+\c@citecounter=\count327
+\c@maxcitecounter=\count328
+\c@savedcitecounter=\count329
+\c@uniquelist=\count330
+\c@uniquename=\count331
+\c@refsection=\count332
+\c@refsegment=\count333
+\c@maxextratitle=\count334
+\c@maxextratitleyear=\count335
+\c@maxextraname=\count336
+\c@maxextradate=\count337
+\c@maxextraalpha=\count338
+\c@abbrvpenalty=\count339
+\c@highnamepenalty=\count340
+\c@lownamepenalty=\count341
+\c@maxparens=\count342
+\c@parenlevel=\count343
+\blx@tempcnta=\count344
+\blx@tempcntb=\count345
+\blx@tempcntc=\count346
+\c@blx@maxsection=\count347
+\blx@maxsegment@0=\count348
+\blx@notetype=\count349
+\blx@parenlevel@text=\count350
+\blx@parenlevel@foot=\count351
+\blx@sectionciteorder@0=\count352
+\blx@sectionciteorderinternal@0=\count353
+\blx@entrysetcounter=\count354
+\blx@biblioinstance=\count355
 \labelnumberwidth=\skip60
 \labelalphawidth=\skip61
 \biblabelsep=\skip62
@@ -378,85 +428,86 @@ Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 \blx@bcfin=\read2
 \blx@bcfout=\write3
 \blx@langwohyphens=\language79
-\c@mincomprange=\count359
-\c@maxcomprange=\count360
-\c@mincompwidth=\count361
+\c@mincomprange=\count356
+\c@maxcomprange=\count357
+\c@mincompwidth=\count358
 Package biblatex Info: Trying to load biblatex default data model...
 Package biblatex Info: ... file 'blx-dm.def' found.
 
-(C:\Users\Nutzer\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\blx-dm.def
+(C:\Users\Bagus Alifah Hasyim\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\
+blx-dm.def
 File: blx-dm.def 2024/03/21 v3.20 biblatex datamodel (PK/MW)
 )
 Package biblatex Info: Trying to load biblatex custom data model...
 Package biblatex Info: ... file 'biblatex-dm.cfg' not found.
-\c@afterword=\count362
-\c@savedafterword=\count363
-\c@annotator=\count364
-\c@savedannotator=\count365
-\c@author=\count366
-\c@savedauthor=\count367
-\c@bookauthor=\count368
-\c@savedbookauthor=\count369
-\c@commentator=\count370
-\c@savedcommentator=\count371
-\c@editor=\count372
-\c@savededitor=\count373
-\c@editora=\count374
-\c@savededitora=\count375
-\c@editorb=\count376
-\c@savededitorb=\count377
-\c@editorc=\count378
-\c@savededitorc=\count379
-\c@foreword=\count380
-\c@savedforeword=\count381
-\c@holder=\count382
-\c@savedholder=\count383
-\c@introduction=\count384
-\c@savedintroduction=\count385
-\c@namea=\count386
-\c@savednamea=\count387
-\c@nameb=\count388
-\c@savednameb=\count389
-\c@namec=\count390
-\c@savednamec=\count391
-\c@translator=\count392
-\c@savedtranslator=\count393
-\c@shortauthor=\count394
-\c@savedshortauthor=\count395
-\c@shorteditor=\count396
-\c@savedshorteditor=\count397
-\c@labelname=\count398
-\c@savedlabelname=\count399
-\c@institution=\count400
-\c@savedinstitution=\count401
-\c@lista=\count402
-\c@savedlista=\count403
-\c@listb=\count404
-\c@savedlistb=\count405
-\c@listc=\count406
-\c@savedlistc=\count407
-\c@listd=\count408
-\c@savedlistd=\count409
-\c@liste=\count410
-\c@savedliste=\count411
-\c@listf=\count412
-\c@savedlistf=\count413
-\c@location=\count414
-\c@savedlocation=\count415
-\c@organization=\count416
-\c@savedorganization=\count417
-\c@origlocation=\count418
-\c@savedoriglocation=\count419
-\c@origpublisher=\count420
-\c@savedorigpublisher=\count421
-\c@publisher=\count422
-\c@savedpublisher=\count423
-\c@language=\count424
-\c@savedlanguage=\count425
-\c@origlanguage=\count426
-\c@savedoriglanguage=\count427
-\c@pageref=\count428
-\c@savedpageref=\count429
+\c@afterword=\count359
+\c@savedafterword=\count360
+\c@annotator=\count361
+\c@savedannotator=\count362
+\c@author=\count363
+\c@savedauthor=\count364
+\c@bookauthor=\count365
+\c@savedbookauthor=\count366
+\c@commentator=\count367
+\c@savedcommentator=\count368
+\c@editor=\count369
+\c@savededitor=\count370
+\c@editora=\count371
+\c@savededitora=\count372
+\c@editorb=\count373
+\c@savededitorb=\count374
+\c@editorc=\count375
+\c@savededitorc=\count376
+\c@foreword=\count377
+\c@savedforeword=\count378
+\c@holder=\count379
+\c@savedholder=\count380
+\c@introduction=\count381
+\c@savedintroduction=\count382
+\c@namea=\count383
+\c@savednamea=\count384
+\c@nameb=\count385
+\c@savednameb=\count386
+\c@namec=\count387
+\c@savednamec=\count388
+\c@translator=\count389
+\c@savedtranslator=\count390
+\c@shortauthor=\count391
+\c@savedshortauthor=\count392
+\c@shorteditor=\count393
+\c@savedshorteditor=\count394
+\c@labelname=\count395
+\c@savedlabelname=\count396
+\c@institution=\count397
+\c@savedinstitution=\count398
+\c@lista=\count399
+\c@savedlista=\count400
+\c@listb=\count401
+\c@savedlistb=\count402
+\c@listc=\count403
+\c@savedlistc=\count404
+\c@listd=\count405
+\c@savedlistd=\count406
+\c@liste=\count407
+\c@savedliste=\count408
+\c@listf=\count409
+\c@savedlistf=\count410
+\c@location=\count411
+\c@savedlocation=\count412
+\c@organization=\count413
+\c@savedorganization=\count414
+\c@origlocation=\count415
+\c@savedoriglocation=\count416
+\c@origpublisher=\count417
+\c@savedorigpublisher=\count418
+\c@publisher=\count419
+\c@savedpublisher=\count420
+\c@language=\count421
+\c@savedlanguage=\count422
+\c@origlanguage=\count423
+\c@savedoriglanguage=\count424
+\c@pageref=\count425
+\c@savedpageref=\count426
 \shorthandwidth=\skip68
 \shortjournalwidth=\skip69
 \shortserieswidth=\skip70
@@ -474,54 +525,55 @@ Package biblatex Info: ... file 'biblatex-dm.cfg' not found.
 Package biblatex Info: Trying to load enhanced support for Unicode engines...
 Package biblatex Info: ... file 'blx-unicode.def' found.
 
-(C:\Users\Nutzer\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\blx-unicode.d
-ef)
+(C:\Users\Bagus Alifah Hasyim\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\
+blx-unicode.def)
 Package biblatex Info: Trying to load compatibility code...
 Package biblatex Info: ... file 'blx-compat.def' found.
 
-(C:\Users\Nutzer\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\blx-compat.de
-f
+(C:\Users\Bagus Alifah Hasyim\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\
+blx-compat.def
 File: blx-compat.def 2024/03/21 v3.20 biblatex compatibility (PK/MW)
 )
 Package biblatex Info: Trying to load generic definitions...
 Package biblatex Info: ... file 'biblatex.def' found.
 
-(C:\Users\Nutzer\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\biblatex.def
+(C:\Users\Bagus Alifah Hasyim\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\
+biblatex.def
 File: biblatex.def 2024/03/21 v3.20 biblatex compatibility (PK/MW)
-\c@textcitecount=\count430
-\c@textcitetotal=\count431
-\c@textcitemaxnames=\count432
-\c@biburlbigbreakpenalty=\count433
-\c@biburlbreakpenalty=\count434
-\c@biburlnumpenalty=\count435
-\c@biburlucpenalty=\count436
-\c@biburllcpenalty=\count437
+\c@textcitecount=\count427
+\c@textcitetotal=\count428
+\c@textcitemaxnames=\count429
+\c@biburlbigbreakpenalty=\count430
+\c@biburlbreakpenalty=\count431
+\c@biburlnumpenalty=\count432
+\c@biburlucpenalty=\count433
+\c@biburllcpenalty=\count434
 \biburlbigskip=\muskip19
 \biburlnumskip=\muskip20
 \biburlucskip=\muskip21
 \biburllcskip=\muskip22
-\c@smartand=\count438
+\c@smartand=\count435
 )
 Package biblatex Info: Trying to load bibliography style 'numeric'...
 Package biblatex Info: ... file 'numeric.bbx' found.
 
-(C:\Users\Nutzer\AppData\Local\Programs\MiKTeX\tex/latex/biblatex/bbx\numeric.b
-bx
+(C:\Users\Bagus Alifah Hasyim\AppData\Local\Programs\MiKTeX\tex/latex/biblatex/
+bbx\numeric.bbx
 File: numeric.bbx 2024/03/21 v3.20 biblatex bibliography style (PK/MW)
 Package biblatex Info: Trying to load bibliography style 'standard'...
 Package biblatex Info: ... file 'standard.bbx' found.
 
-(C:\Users\Nutzer\AppData\Local\Programs\MiKTeX\tex/latex/biblatex/bbx\standard.
-bbx
+(C:\Users\Bagus Alifah Hasyim\AppData\Local\Programs\MiKTeX\tex/latex/biblatex/
+bbx\standard.bbx
 File: standard.bbx 2024/03/21 v3.20 biblatex bibliography style (PK/MW)
-\c@bbx:relatedcount=\count439
-\c@bbx:relatedtotal=\count440
+\c@bbx:relatedcount=\count436
+\c@bbx:relatedtotal=\count437
 ))
 Package biblatex Info: Trying to load citation style 'numeric'...
 Package biblatex Info: ... file 'numeric.cbx' found.
 
-(C:\Users\Nutzer\AppData\Local\Programs\MiKTeX\tex/latex/biblatex/cbx\numeric.c
-bx
+(C:\Users\Bagus Alifah Hasyim\AppData\Local\Programs\MiKTeX\tex/latex/biblatex/
+cbx\numeric.cbx
 File: numeric.cbx 2024/03/21 v3.20 biblatex citation style (PK/MW)
 Package biblatex Info: Redefining '\cite'.
 Package biblatex Info: Redefining '\parencite'.
@@ -538,38 +590,41 @@ Package biblatex Info: Redefining '\smartcites'.
 Package biblatex Info: Trying to load configuration file...
 Package biblatex Info: ... file 'biblatex.cfg' found.
 
-(C:\Users\Nutzer\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\biblatex.cfg
+(C:\Users\Bagus Alifah Hasyim\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\
+biblatex.cfg
 File: biblatex.cfg 
 )
 Package biblatex Info: XeTeX detected.
 (biblatex)             Assuming input encoding 'utf8'.
 Package biblatex Info: Document encoding is UTF8 ....
-(C:\Users\Nutzer\AppData\Local\Programs\MiKTeX\tex/latex/l3kernel\expl3.sty
-Package: expl3 2025-05-26 L3 programming layer (loader) 
 
-(C:\Users\Nutzer\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-xe
-tex.def
+(C:\Users\Bagus Alifah Hasyim\AppData\Local\Programs\MiKTeX\tex/latex/l3kernel\
+expl3.sty
+Package: expl3 2025-04-29 L3 programming layer (loader) 
+
+(C:\Users\Bagus Alifah Hasyim\AppData\Local\Programs\MiKTeX\tex/latex/l3backend
+\l3backend-xetex.def
 File: l3backend-xetex.def 2025-04-14 L3 backend support: XeTeX
-\g__graphics_track_int=\count441
-\g__pdfannot_backend_int=\count442
-\g__pdfannot_backend_link_int=\count443
+\g__graphics_track_int=\count438
+\g__pdfannot_backend_int=\count439
+\g__pdfannot_backend_link_int=\count440
 ))
 Package biblatex Info: ... and expl3
-(biblatex)             2025-05-26 L3 programming layer (loader) 
+(biblatex)             2025-04-29 L3 programming layer (loader) 
 (biblatex)             is new enough (at least 2020/04/06),
 (biblatex)             setting 'casechanger=expl3'.
 
-(C:\Users\Nutzer\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\blx-case-expl
-3.sty
-(C:\Users\Nutzer\AppData\Local\Programs\MiKTeX\tex/latex/l3packages/xparse\xpar
-se.sty
+(C:\Users\Bagus Alifah Hasyim\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\
+blx-case-expl3.sty
+(C:\Users\Bagus Alifah Hasyim\AppData\Local\Programs\MiKTeX\tex/latex/l3package
+s/xparse\xparse.sty
 Package: xparse 2024-08-16 L3 Experimental document command parser
 )
 Package: blx-case-expl3 2024/03/21 v3.20 expl3 case changing code for biblatex
 ))
 \llabelsep=\skip82
-\@quotelevel=\count444
-\@quotereset=\count445
+\@quotelevel=\count441
+\@quotereset=\count442
  (main.aux
 
 LaTeX Warning: Label `fig:S22_Mesh1-4' multiply defined.
@@ -598,10 +653,12 @@ Package caption Info: float package is loaded.
 Package caption Info: listings package is loaded.
 Package caption Info: longtable package is loaded.
 
-(C:\Users\Nutzer\AppData\Local\Programs\MiKTeX\tex/latex/caption\ltcaption.sty
+(C:\Users\Bagus Alifah Hasyim\AppData\Local\Programs\MiKTeX\tex/latex/caption\l
+tcaption.sty
 Package: ltcaption 2021/01/08 v1.4c longtable captions (AR)
 )
 Package caption Info: End \AtBeginDocument code.
+
 *geometry* driver: auto-detecting
 *geometry* detected driver: xetex
 *geometry* verbose mode - [ preamble ] result:
@@ -636,12 +693,12 @@ Package caption Info: End \AtBeginDocument code.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-\c@lstlisting=\count446
+\c@lstlisting=\count443
 Package biblatex Info: Trying to load language 'english'...
 Package biblatex Info: ... file 'english.lbx' found.
 
-(C:\Users\Nutzer\AppData\Local\Programs\MiKTeX\tex/latex/biblatex/lbx\english.l
-bx
+(C:\Users\Bagus Alifah Hasyim\AppData\Local\Programs\MiKTeX\tex/latex/biblatex/
+lbx\english.lbx
 File: english.lbx 2024/03/21 v3.20 biblatex localization (PK/MW)
 )
 Package biblatex Info: XeTeX detected.
@@ -655,12 +712,15 @@ Package biblatex Info: ... file 'main.bbl' found.
  (main.bbl)
 Package biblatex Info: Reference section=0 on input line 61.
 Package biblatex Info: Reference segment=0 on input line 61.
-\c@llabel=\count447
+\c@llabel=\count444
 
 
 [1
 
 ]
+File: images/GeoDef.png Graphic file (type bmp)
+<images/GeoDef.png>
+
 
 [2]
 
@@ -749,9 +809,27 @@ File: visualize_tensileGraph/res/Iso_Hard.png Graphic file (type bmp)
 <visualize_tensileGraph/res/Iso_Hard.png>
 
 
+LaTeX Warning: Reference `tab:materialQ2-properties' on page 15 undefined on in
+put line 557.
+
+
+LaTeX Warning: Reference `tab:materialQ2-properties' on page 15 undefined on in
+put line 557.
+
+
+
 [15]
 File: visualize_tensileGraph/res/Kin_Hard.png Graphic file (type bmp)
 <visualize_tensileGraph/res/Kin_Hard.png>
+
+
+LaTeX Warning: Reference `tab:materialQ2-properties' on page 16 undefined on in
+put line 587.
+
+
+LaTeX Warning: Reference `tab:materialQ2-properties' on page 16 undefined on in
+put line 587.
+
 
 
 [16]
@@ -770,32 +848,34 @@ File: visualize_tensileGraph/res/Hardening_Graph.png Graphic file (type bmp)
 [18]
 
 [19]
-(C:\Users\Nutzer\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang1.sty
+(C:\Users\Bagus Alifah Hasyim\AppData\Local\Programs\MiKTeX\tex/latex/listings\
+lstlang1.sty
 File: lstlang1.sty 2024/09/23 1.10c listings language file
-) (C:\Users\Nutzer\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang1.st
-y
+)
+(C:\Users\Bagus Alifah Hasyim\AppData\Local\Programs\MiKTeX\tex/latex/listings\
+lstlang1.sty
 File: lstlang1.sty 2024/09/23 1.10c listings language file
 )
 
-Package Listings Warning: Text dropped after begin of listing on input line 670
+Package Listings Warning: Text dropped after begin of listing on input line 691
 .
 
 
-Overfull \hbox (5.44981pt too wide) in paragraph at lines 671--672
+Overfull \hbox (5.44981pt too wide) in paragraph at lines 692--693
 [][][][][][] 
  []
 
 
-Overfull \hbox (5.44981pt too wide) in paragraph at lines 679--680
+Overfull \hbox (5.44981pt too wide) in paragraph at lines 700--701
 [][][][][][] 
  []
 
 
-Package Listings Warning: Text dropped after begin of listing on input line 694
+Package Listings Warning: Text dropped after begin of listing on input line 715
 .
 
 
-Package Listings Warning: Text dropped after begin of listing on input line 717
+Package Listings Warning: Text dropped after begin of listing on input line 738
 .
 
 
@@ -859,9 +939,12 @@ File: images/Q3-4/SDV9.png Graphic file (type bmp)
 
 [28] (main.aux)
  ***********
-LaTeX2e <2025-06-01>
-L3 programming layer <2025-05-26>
+LaTeX2e <2024-11-01> patch level 2
+L3 programming layer <2025-04-29>
  ***********
+
+
+LaTeX Warning: There were undefined references.
 
 
 LaTeX Warning: There were multiply-defined labels.
@@ -871,12 +954,12 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 14718 strings out of 403341
- 266224 string characters out of 5462914
- 1143003 words of memory out of 5000000
- 42882 multiletter control sequences out of 15000+600000
+ 14717 strings out of 405039
+ 267074 string characters out of 5496419
+ 1126409 words of memory out of 5000000
+ 41182 multiletter control sequences out of 15000+600000
  632393 words of font info for 72 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 60i,10n,66p,844b,1326s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 60i,12n,66p,872b,1324s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
 Output written on main.pdf (28 pages).

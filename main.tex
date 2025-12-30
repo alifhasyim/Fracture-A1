@@ -54,7 +54,7 @@
 \setlength{\parskip}{0em}
 \setlength{\parindent}{0pt}
 
-\title{Assignment 2 \\ \large Computational Fracture Mechanics (WiSe2526)}
+\title{Assignment 1 \\ \large Computational Fracture Mechanics (WiSe2526)}
 \author{Bagus Alifah Hasyim \\ 108023246468}
 \date{}
 
@@ -78,13 +78,13 @@ Parameter for 1st question:
     $b = 2.0 + 0.1d_1 = 2.0 + 0.1 \times 4 = 2.4 \text{ mm}$
     \item Plate width h 
     
-    $h = b(0.4 + 0.04d_2) = 2.4(0.4 + 0.04 \times 6) = 2.4(0.4 + 0.24) = 2.4 \times 0.64 = 1.536 \text{ mm}$
+    $h = b(0.4 + 0.04d_2) = 2.4(0.4 + 0.04 \times 6) = 1.536 \text{ mm}$
     \item Crack length l
     
-    $l = b(0.05 + 0.02d_3) = 2.4(0.05 + 0.02 \times 8) = 2.4(0.05 + 0.16) = 2.4 \times 0.21 = 0.504 \text{ mm}$
+    $l = b(0.05 + 0.02d_3) = 2.4(0.05 + 0.02 \times 8) = 0.504 \text{ mm}$
     \item Applied displacement u 
     
-    $u = 0.001 + \frac{d_3}{1000} [\text{mm}] = 0.001 + \frac{8}{1000} = 0.001 + 0.008 = 0.009 \text{ mm}$  
+    $u = 0.001 + \frac{d_3}{1000} [\text{mm}] = 0.001 + \frac{8}{1000} = 0.009 \text{ mm}$  
     
 \end{itemize}
 
@@ -92,13 +92,13 @@ Parameter for 1st question:
 Parameter for 2nd question:
 \begin{itemize}
     \item Applied displacement u
-    $u = 0.1 + \frac{d_3}{100}[\text{mm}] = 0.1 + \frac{8}{100} = 0.1 + 0.08 = 0.18 \text{ mm}$ 
+    $u = 0.1 + \frac{d_3}{100}[\text{mm}] = 0.1 + \frac{8}{100} = 0.18 \text{ mm}$ 
 \end{itemize}
 \vspace{1em}
 
 
 \section{Introduction} 
-In this first assignments, the main focus will be on performing crack analysis
+\hspace{2em}In this first assignments, the main focus will be on performing crack analysis
 using finite element method (FEM) in Abaqus software using two approaches. The first
 method is to perform a pre-defined crack analysis without separation between two materials,
 whereas the area around the crack tip will be evaluated to obtain the behavior of the stress field. Hence, J-integral
@@ -106,63 +106,84 @@ will be calculated based on the stress field using domain integral method to obt
 is to find the stable value of J-integral based on the contour integral surrounding the crack, which will be used
 as a reference value for the crack initiation value.
 
-The second task is to analyze crack propagation using the cohesive zone method. Hence, some
+\hspace{2em}The second task is to analyze crack propagation using the cohesive zone method. Hence, some
 cohesive elements will be defined along the pre-defined crack path with the 
-cohesive parameters. From this analysis, a traction-separation curve will be obtained
-to visualize the stress-displacement phenomenon of the seperation events. 
+cohesive parameters with an initial crack opening on the front of the cohesive line. 
+From the task definition, the separation behavior of the cohesive are will be observed, as well as the energy release 
+rate. This can be achieved by plotting the traction-separation curve, which will show the
+relationship between the traction and separation displacement along the cohesive zone. Another key aspect that will be obtained
+is to know the force-time response during the crack propagation, so that it can be correlated with the traction-separation
+curve.
+
 
 \section{Set up of the Model}
-
 
 \subsection{Material Properties}
 
 \begin{table}[H]
 \centering
-\caption{Elastic properties for Q1.}
-\label{tab:materialQ1-properties}
-\begin{tabular}{ll}
+\begin{minipage}{0.49\textwidth}
+\centering
+\caption{Flow curve data for Q1 and Q2}
+\label{tab:PlasticityQ1Q2}
+\begin{tabular}{cc}
     \toprule
-    E (GPa) & $\nu$ (Poisson's Ratio) \\
+    Plastic Stress (MPa) & Strain \\
     \midrule
-    \multicolumn{1}{c}{240} & \multicolumn{1}{c}{0.3} \\
+    300 & 0 \\
+    400 & 0.001 \\
+    600 & 0.003 \\
+    700 & 0.005 \\
+    \toprule
+    Young Modulus (GPa) & $\nu$ \\
+    \midrule
+    210 & 0.3 \\
     \bottomrule
 \end{tabular}
+\end{minipage}
+\hfill
+\begin{minipage}{0.49\textwidth}
+\centering
+\caption{Cohesive parameters for Q2}
+\label{tab:CohesiveQ2}
+\begin{tabular}{lc}
+    \toprule
+    Material Parameters & Values \\
+    \midrule
+    $K_n$ (GPa) & 210 \\
+    $K_s$ (GPa) & 210 \\
+    $K_t$ (GPa) & 210 \\
+    $\sigma_n$ (MPa) & 500 \\
+    $\sigma_{s,t}$ & 0 \\
+    $\delta_{fail}$ (mm) & 0.0038 \\
+    \bottomrule
+\end{tabular}
+\end{minipage}
 \end{table}
 
-\begin{table}[H]
-    \centering
-    \caption{Material parameters (combined hardening law) for Q2.}
-    \label{tab:materialQ2-properties}
-    \begin{tabular}{lccccccc}
-        \toprule
-        $\sigma_y$ (MPa) & $C_1$ (MPa) & $\gamma_1$ & $C_2$ (MPa) & $\gamma_2$ & Q-Infinity & Hardening Param $b$ \\
-        \midrule
-        732 & 19996 & 44 & 3664 & 0 & 440 & 20 \\
-        \bottomrule
-    \end{tabular}
-\end{table}
 
-\begin{table}[H]
-    \centering
-    \caption{Plastic properties for Q3}
-    \label{tab:materialQ3-properties}
-    \begin{tabular}{lll}
-        \toprule
-            \centering $\sigma_{ya}$ (MPa) & $\sigma_f$ (MPa) & $\epsilon_{p}^f$  \\
-            \midrule
-            \centering 360 & 550 & 0.4  \\
-            \bottomrule
-    \end{tabular}
-\end{table}
 \vspace{1em}
-\hspace{2em}Table~\ref{tab:materialQ1-properties} shows the elastic properties that will be used in Question 1. These properties
-consist of Young's modulus (E) and Poisson's ratio ($\nu$). 
-Table~\ref{tab:materialQ2-properties} summarizes the material parameters for the combined hardening law 
-used in Question 2, whereas some of the feature will be deactivated, for instance to model the isotropic
-hardening, the kinematic hardening parameters will be set to zero, and vice versa. Table~\ref{tab:materialQ3-properties}
-presents the plastic properties for question 3, which will be used in both
-the standard J2 plasticity model and the UMAT subroutine implementation.
+\hspace{2em}Table~\ref{tab:PlasticityQ1Q2} shows the material properties for the elastic and plastic part, which includes the plastic flow with its strain as well
+as the young modulus and Poisson's ratio for the elastic part. Here, the material 
+will be used for both question 1 and question 2. Meanwhile, table~\ref{tab:CohesiveQ2} shows the cohesive parameters, which will be used to define
+the cohesive zone model in question 2. The parameters include the stiffness of the cohesive area in normal and shear 
+directions, the maximum nominal stress, and the failure separation displacement.
 
+\subsection{Geometry and Boundary Conditions}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{images/GeoDef.png}
+    \caption{Geometry and boundary definition of the plate with horizontal crack on the left-middle side of the plate. The geometry parameters are defined
+    in the first section of the report, whereas b = 2.4 mm, h = 1.536 mm, and l = 0.504 mm.}
+    \label{fig:GeoDef}
+\end{figure}
+
+\hspace{2em}Figure~\ref{fig:GeoDef} shows the geometry and boundary conditions of the plate with horizontal crack. Hence, the displacement will
+be applied on the left side of the plate, whereas the left-top edge will have displacement to the y-positive direction and left-bottom edge
+will have the opposite direction. The right side of the plate will be fixed in both x and y directions. The crack is designated
+as in the red color with some certain length. 
+
+\subsection{Mesh Set Up}
 
 \newpage
 \section*{Results and Discussion}
