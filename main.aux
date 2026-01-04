@@ -4,63 +4,61 @@
 \@writefile{toc}{\contentsline {section}{\numberline {2}Set up of the Model}{2}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.1}Material Properties}{2}{}\protected@file@percent }
 \@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Flow curve data for Q1 and Q2}}{2}{}\protected@file@percent }
+\providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
 \newlabel{tab:PlasticityQ1Q2}{{1}{2}{Material Properties}{table.1}{}}
 \@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces Cohesive parameters for Q2}}{2}{}\protected@file@percent }
 \newlabel{tab:CohesiveQ2}{{2}{2}{Material Properties}{table.2}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.2}Geometry and Boundary Conditions}{3}{}\protected@file@percent }
 \@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Geometry and boundary definition of the plate with horizontal crack on the left-middle side of the plate. The geometry parameters are defined in the first section of the report, whereas b = 2.4 mm, h = 1.536 mm, and l = 0.504 mm. This dimension configuration is used for both question 1 and 2.}}{3}{}\protected@file@percent }
-\providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
 \newlabel{fig:GeoDef}{{1}{3}{Geometry and Boundary Conditions}{figure.1}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.3}Mesh Set Up}{3}{}\protected@file@percent }
 \@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Mesh configuration for the first task. A standard and linear CPS4 (4-node bilinear plane stress quadrilateral) mesh configuration is implemented with the possibility to change to plane stress and plane strain condition, without reduced integration mode. Additional refinement is added to the crack tip with more structured mesh wit 15 nodes mesh partitioning.}}{4}{}\protected@file@percent }
 \newlabel{fig:Mesh_Task1}{{2}{4}{Mesh Set Up}{figure.2}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Final mesh configuration for both question 1 and question 2. The mesh is created using CPS4 element type, which is a 4-node bilinear plane stress quadrilateral element. The mesh is refined around the crack tip area to accurately capture the stress concentration effects.}}{4}{}\protected@file@percent }
 \newlabel{fig:Mesh_Task2}{{3}{4}{Mesh Set Up}{figure.3}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Partitioning guideline in order to create a structured mesh for the plate with circular hole. The whole mesh variations use CPS4, which is a 4-node bilinear plane stress quadrilateral element, also using quad-structured mesh control feature for the whole region to retain structured mesh and avoid extreme-distorted element.}}{5}{}\protected@file@percent }
-\newlabel{fig:MeshPartitioning}{{4}{5}{}{figure.4}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces Mesh size variations used for mesh sensitivity analysis.}}{6}{}\protected@file@percent }
-\newlabel{tab:mesh-sizes}{{3}{6}{}{table.3}{}}
-\newlabel{fig:S22_Mesh1-4}{{\caption@xref {fig:S22_Mesh1-4}{ on input line 350}}{9}{}{table.3}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Contour plots of the $S_{22}$ stress component for Mesh 1, 2, 3, and 4 (from left to right, top to bottom). Maximum and minimum stress locations are indicated.}}{9}{}\protected@file@percent }
-\newlabel{fig:S22_Mesh1-4}{{5}{9}{}{figure.5}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces Contour plots of the $S_{22}$ stress component for Mesh 5, 6, 7, and 8 (from left to right, top to bottom). Maximum and minimum stress locations are indicated.}}{10}{}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces Stress concentration distribution along the defined path for all mesh sizes. Each curve represents the relevant stress component for a specific mesh configuration, illustrating the effect of mesh refinement on capturing the stress concentration near the circular hole. The path is defined from the edge of the hole to the opposite edge of the plate, marked by redline in the geometry. The stress concentration factor is calculated based on the ratio of generated stress or maximum stress in the specific point to the nominal stress, which is 1 MPa.}}{11}{}\protected@file@percent }
-\newlabel{fig:CombinedStressDistribution}{{7}{11}{}{figure.7}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces Stress concentration factor $K_t$ along the defined path for all mesh sizes. Each curve represents the $K_t$ value for a specific mesh configuration, illustrating the effect of mesh refinement on capturing the stress concentration near the circular hole. The plot is divided by two plots, where the main plot shows the overall $K_t$ value based on the element numbers that being used, while the zoomed-in plot shows the detail of $K_t$ value based on specifically the mesh numbering.}}{12}{}\protected@file@percent }
-\newlabel{fig:CombinedStressDistribution_Kt}{{8}{12}{}{figure.8}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces Plot of the stress concentration factor $K_t$ versus mesh number for all mesh configurations. For this case, it shows that the effective $K_t$ for d/W = 0.1 is approximately 2.72. Hence, this will be a reference to choose the most optimal mesh size configuration.}}{13}{}\protected@file@percent }
-\newlabel{fig:Kt_Graph}{{9}{13}{}{figure.9}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces (Left) Mesh of the proposed quad-symmetry model. (Right) boundary conditions configuration applied to the half model. Additional boundary condition is applied to the symmetry line, which here restrict the horizontal movement while allowing y-axis movement. The restriction on the right bottom corner is omitted since it is already restricted by the symmetry line for the horizontal movement. The nominal stress is applied on the top line as in the full model, as well for the fixed support on the bottom that allows horizontal movement. }}{13}{}\protected@file@percent }
-\newlabel{fig:QuadModel}{{10}{13}{}{figure.10}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {11}{\ignorespaces Comparison of $S_{22}$ stress contours for Mesh 3: full model (left) and quad-symmetry model (right). Both plots show the stress distribution and concentration near the hole, demonstrating that the quad-symmetry model accurately reproduces the results of the full model, with slighly deviation on the values.}}{14}{}\protected@file@percent }
-\newlabel{fig:QuadModel_StressContour}{{11}{14}{}{figure.11}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {12}{\ignorespaces Applied cyclic loading amplitude for the tension-compression simulation. The plot shows the displacement history used to investigate the hardening behavior under repeated loading cycles. The amplitude is defined to reach a maximum displacement of 0.2 mm as the peak value is reached, while the minimum displacement is set to -0.2 mm when the valley is reached. This loading pattern is applied for 5 cycles and the total time duration of 20 seconds.}}{15}{}\protected@file@percent }
-\newlabel{fig:CyclicAmplitude}{{12}{15}{}{figure.12}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {13}{\ignorespaces Stress-strain hysteresis loop for the isotropic hardening model under cyclic tension-compression loading. The plot illustrates the expansion of the yield surface and the corresponding material response. For this isotropic hardening model, Q-infinity and hardening parameter b are set according to table~\ref {tab:materialQ2-properties}, whereas the $C_1$, $\gamma _1$, and $C_2$ are set to zero to disable the kinematic hardening effect.}}{16}{}\protected@file@percent }
-\newlabel{fig:Iso_Hard}{{13}{16}{}{figure.13}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {14}{\ignorespaces Stress-strain hysteresis loop for the kinematic hardening model under cyclic tension-compression loading. The plot demonstrates the translation of the yield surface and the corresponding material response. For this kinematic hardening model, Q-infinity and hardening parameter b are set to zero to disable the isotropic hardening. While parameters such as $C_1$, $\gamma _1$, and $C_2$ are set according to table~\ref {tab:materialQ2-properties} in order to activate kinematic hardening.}}{17}{}\protected@file@percent }
-\newlabel{fig:Kin_Hard}{{14}{17}{}{figure.14}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {15}{\ignorespaces Comparison of stress-strain hysteresis loops for isotropic and kinematic hardening models under cyclic tension-compression loading. The plot highlights the differences in material response due to both hardening mechanisms.}}{18}{}\protected@file@percent }
-\newlabel{fig:Iso_Kinem_Comparison}{{15}{18}{}{figure.15}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {16}{\ignorespaces Stress-strain hysteresis loop for the combined hardening model under cyclic tension-compression loading. The plot shows the material response when both isotropic and kinematic hardening mechanisms are active, illustrating the combined effects on the expansion and translation of the yield surface.}}{19}{}\protected@file@percent }
-\newlabel{fig:Com_Hard}{{16}{19}{}{figure.16}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {17}{\ignorespaces Comparison of stress-strain hysteresis loops for isotropic, kinematic, and combined hardening models under cyclic tension-compression loading. The plot highlights the differences in material response due to these three hardening mechanisms. It shows that when the first time material yielded, both 3 hardening mechanism are having the same transitional elastic-plastic breaking point. However, as the loading increase, combined hardening have the highest hardening modulus, where this is shown by the highest hardening development (steeper slope) compared to the kinematic and isotropic hardening model. }}{20}{}\protected@file@percent }
-\newlabel{fig:Hardening_Comparison}{{17}{20}{}{figure.17}{}}
-\@writefile{lol}{\contentsline {lstlisting}{\textdollar }{21}{}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {18}{\ignorespaces Comparison of tensile test for both J2-UMAT and J2-Abaqus model using the effective mesh variation from Q1. The plot shows the true stress-strain curves for both models, illustrating a linear behavior are shown for both models in the elastic region, followed by a transitional elastic-plastic region in the yielding point at strain about 0.002, and then followed by a plastic region where the curve is none-linear. }}{23}{}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {19}{\ignorespaces Contour plots of von Mises stress at four representative time frames from the embedded J2 simulation, showing the evolution from elastic to localized necking. The von Mises stress grows starting from the initial loading phase in time frame 1, where it is at the elastic region. At frame 2, it starts to deform plastically as the stress distribution starts to yield.}}{24}{}\protected@file@percent }
-\newlabel{fig:J2-Abaqus}{{19}{24}{}{figure.19}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {20}{\ignorespaces Contour plots of equivalent plastic strain at four representative time frames from the embedded J2 simulation, illustrating the progression of plastic deformation and localization.}}{25}{}\protected@file@percent }
-\newlabel{fig:J2-Abaqus-PEEQ}{{20}{25}{}{figure.20}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {21}{\ignorespaces SDV1 and SDV2: Distributions of the first and second state-dependent variables at the final simulation time, showing relevant stress/plastic strain components and internal variables. Maximum and minimum locations are indicated.}}{26}{}\protected@file@percent }
-\newlabel{fig:SDV1-2}{{21}{26}{}{figure.21}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {22}{\ignorespaces SDV3 and SDV4: Distributions of the third and fourth state-dependent variables at the final simulation time, indicating mechanical quantities and localization effects.}}{26}{}\protected@file@percent }
-\newlabel{fig:SDV3-4}{{22}{26}{}{figure.22}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {23}{\ignorespaces SDV5 and SDV6: Distributions of the fifth and sixth state-dependent variables at the final simulation time, highlighting regions of maximum/minimum and mechanical response evolution.}}{27}{}\protected@file@percent }
-\newlabel{fig:SDV5-6}{{23}{27}{}{figure.23}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {24}{\ignorespaces SDV7 and SDV8: Distributions of the seventh and eighth state-dependent variables at the final simulation time, showing spatial variation and marked extrema.}}{27}{}\protected@file@percent }
-\newlabel{fig:SDV7-8}{{24}{27}{}{figure.24}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {25}{\ignorespaces SDV9: Distribution of the ninth state-dependent variable (SDV9): $\overline  {\varepsilon }^{p}$}}{28}{}\protected@file@percent }
-\newlabel{fig:SDV9}{{25}{28}{}{figure.25}{}}
-\abx@aux@read@bbl@mdfivesum{E75D7E0DB03F09D45B25DF2F538BB294}
-\gdef \@abspage@last{29}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Von Mises stress contour plot around the crack tip for elastic analysis under plane stress condition.}}{5}{}\protected@file@percent }
+\newlabel{fig:Q1_Elastic_PStress}{{4}{5}{}{figure.4}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Von Mises stress contour plot around the crack tip for elastic analysis under plane strain condition.}}{5}{}\protected@file@percent }
+\newlabel{fig:Q1_Elastic_PStrain}{{5}{5}{}{figure.5}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces Stress components along path C for both plane stress and plane strain conditions in elastic analysis.}}{6}{}\protected@file@percent }
+\newlabel{fig:Q1_Elastic_Stress_Curve}{{6}{6}{}{figure.6}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces Von Mises stress comparison between elastic and elastic-plastic analysis under plane stress condition.}}{7}{}\protected@file@percent }
+\newlabel{fig:Q1_ResponseElPl}{{7}{7}{}{figure.7}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces Von Mises stress contour plot around the crack tip for plastic analysis under plane stress condition.}}{8}{}\protected@file@percent }
+\newlabel{fig:Q1_Plastic_PStress}{{8}{8}{}{figure.8}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces Von Mises stress contour plot around the crack tip for plastic analysis under plane strain condition.}}{8}{}\protected@file@percent }
+\newlabel{fig:Q1_Plastic_PStrain}{{9}{8}{}{figure.9}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces Stress components along path C for both plane stress and plane strain conditions in elastic-plastic analysis.}}{8}{}\protected@file@percent }
+\newlabel{fig:Q1_C_StressCurve}{{10}{8}{}{figure.10}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {11}{\ignorespaces Stress components along path C for both plane stress and plane strain conditions in elastic-plastic analysis.}}{9}{}\protected@file@percent }
+\newlabel{fig:Q1_C_StressCurve}{{11}{9}{}{figure.11}{}}
+\newlabel{eq:RambergOsgood}{{2}{10}{}{equation.2}{}}
+\newlabel{eq:modifiedRambergOsgood}{{3}{10}{}{equation.3}{}}
+\newlabel{eq:yieldStrain}{{4}{10}{}{equation.4}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {12}{\ignorespaces Ramberg-Osgood flow curve based on the Ramberg-Osgood equation with $\alpha $ = 0.01 and n = 10}}{11}{}\protected@file@percent }
+\newlabel{fig:RambergOsgood}{{12}{11}{}{figure.12}{}}
+\abx@aux@cite{0}{Zhu.2012}
+\abx@aux@segm{0}{0}{Zhu.2012}
+\@writefile{lof}{\contentsline {figure}{\numberline {13}{\ignorespaces J-integral values over 10 contours around the crack tip for both elastic and elastic-plastic analysis under plane stress condition. The measurement technique used is domain integral method, as the contour integral is evaluated from n=1 until n=10.}}{12}{}\protected@file@percent }
+\newlabel{fig:Q1_JIntegral}{{13}{12}{}{figure.13}{}}
+\newlabel{eq:StressIntensityFactor}{{5}{12}{}{equation.5}{}}
+\newlabel{eq:GeometryCorrectionFactor}{{6}{12}{}{equation.6}{}}
+\abx@aux@cite{0}{Zhu.2012}
+\abx@aux@segm{0}{0}{Zhu.2012}
+\abx@aux@cite{0}{Clarke.1979}
+\abx@aux@segm{0}{0}{Clarke.1979}
+\newlabel{eq:JIntegralElastic}{{7}{13}{}{equation.7}{}}
+\newlabel{eq:JIntegralElasticPlastic}{{8}{13}{}{equation.8}{}}
+\newlabel{eq:GeometryFactor}{{9}{13}{}{equation.9}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces Theoretical J-integral value calculation summary for elastic and elastic-plastic case.}}{13}{}\protected@file@percent }
+\newlabel{tab:JIntegralCalculation}{{3}{13}{}{table.3}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {14}{\ignorespaces Traction-separation curve based on the cohesive parameters defined in table~\ref {tab:CohesiveQ2}. The curve shows the initial linear elastic region, followed by the softening region until failure separation displacement is reached.}}{14}{}\protected@file@percent }
+\newlabel{fig:TractionSeparationCurve}{{14}{14}{}{figure.14}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {15}{\ignorespaces Crack propagation plot showing the von Mises stress distribution at several load increments. The crack initiates and propagates along the cohesive surface as the load increases.}}{15}{}\protected@file@percent }
+\newlabel{fig:Q2_CrackPropagationPlot}{{15}{15}{}{figure.15}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {16}{\ignorespaces Force-time response showing the total reaction force in the y-direction on the left edge of the upper part. The slope changes indicate crack initiation and propagation.}}{16}{}\protected@file@percent }
+\newlabel{fig:Q2_ForceTimeResponse}{{16}{16}{}{figure.16}{}}
+\abx@aux@read@bbl@mdfivesum{5011CF98CFECB2A2946BE436F91019F1}
+\abx@aux@defaultrefcontext{0}{Clarke.1979}{nty/global//global/global/global}
+\abx@aux@defaultrefcontext{0}{Zhu.2012}{nty/global//global/global/global}
+\gdef \@abspage@last{18}

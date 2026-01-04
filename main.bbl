@@ -16,5 +16,88 @@
   {}
 \endgroup
 
+
+\refsection{0}
+  \datalist[entry]{nty/global//global/global/global}
+    \entry{Clarke.1979}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=32753719010bdeba8890da835a2fda02}{%
+           family={Clarke},
+           familyi={C\bibinitperiod},
+           given={G.\bibnamedelimi A.},
+           giveni={G\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=f6f342f049694003cacd862c067156ae}{%
+           family={Landes},
+           familyi={L\bibinitperiod},
+           given={J.\bibnamedelimi D.},
+           giveni={J\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+      }
+      \strng{namehash}{aee8743056696b57c4bbae80ff63dca0}
+      \strng{fullhash}{aee8743056696b57c4bbae80ff63dca0}
+      \strng{fullhashraw}{aee8743056696b57c4bbae80ff63dca0}
+      \strng{bibnamehash}{aee8743056696b57c4bbae80ff63dca0}
+      \strng{authorbibnamehash}{aee8743056696b57c4bbae80ff63dca0}
+      \strng{authornamehash}{aee8743056696b57c4bbae80ff63dca0}
+      \strng{authorfullhash}{aee8743056696b57c4bbae80ff63dca0}
+      \strng{authorfullhashraw}{aee8743056696b57c4bbae80ff63dca0}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{0090-3973}
+      \field{journaltitle}{Journal of Testing and Evaluation}
+      \field{number}{5}
+      \field{title}{Evaluation of the J Integral for the Compact Specimen}
+      \field{volume}{7}
+      \field{year}{1979}
+      \field{pages}{264\bibrangedash 269}
+      \range{pages}{6}
+      \verb{doi}
+      \verb \url{10.1520/JTE10222J}
+      \endverb
+    \endentry
+    \entry{Zhu.2012}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=61bd7fa3a88109f5987cf652d0696155}{%
+           family={Zhu},
+           familyi={Z\bibinitperiod},
+           given={Xian-Kui},
+           giveni={X\bibinithyphendelim K\bibinitperiod}}}%
+        {{hash=fa06a8231d2705c906e96f63a7aa20e4}{%
+           family={Joyce},
+           familyi={J\bibinitperiod},
+           given={James\bibnamedelima A.},
+           giveni={J\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+      }
+      \strng{namehash}{9d5a16c97c681a422303a53289b608b3}
+      \strng{fullhash}{9d5a16c97c681a422303a53289b608b3}
+      \strng{fullhashraw}{9d5a16c97c681a422303a53289b608b3}
+      \strng{bibnamehash}{9d5a16c97c681a422303a53289b608b3}
+      \strng{authorbibnamehash}{9d5a16c97c681a422303a53289b608b3}
+      \strng{authornamehash}{9d5a16c97c681a422303a53289b608b3}
+      \strng{authorfullhash}{9d5a16c97c681a422303a53289b608b3}
+      \strng{authorfullhashraw}{9d5a16c97c681a422303a53289b608b3}
+      \field{sortinit}{Z}
+      \field{sortinithash}{96892c0b0a36bb8557c40c49813d48b3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Engineering Fracture Mechanics, 85 (2012) 1-46. doi:10.1016/j.engfracmech.2012.02.001}
+      \field{issn}{00137944}
+      \field{journaltitle}{Engineering Fracture Mechanics}
+      \field{title}{Review of fracture toughness (G, K, J, CTOD, CTOA) testing and standardization}
+      \field{volume}{85}
+      \field{year}{2012}
+      \field{pages}{1\bibrangedash 46}
+      \range{pages}{46}
+      \verb{doi}
+      \verb \url{10.1016/j.engfracmech.2012.02.001}
+      \endverb
+      \verb{file}
+      \verb ZhuJoyce-ReviewFractureToughnessTesting-2012:Attachments/ZhuJoyce-ReviewFractureToughnessTesting-2012.pdf:application/pdf
+      \endverb
+      \keyw{ASTM standard;CTOA;CTOD;Energy release rate;Fracture test;Fracture toughness;J-integral;J--R curve;KR curve;Stress intensity factor}
+    \endentry
+  \enddatalist
+\endrefsection
 \endinput
 
