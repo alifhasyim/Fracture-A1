@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (MiKTeX 25.4) (preloaded format=xelatex 2025.11.27)  4 JAN 2026 21:10
+This is XeTeX, Version 3.141592653-2.6-0.999997 (MiKTeX 25.4) (preloaded format=xelatex 2025.11.27)  12 JAN 2026 12:20
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1127,6 +1127,8 @@ File: images/Q2_TractionSeparationCurve.png Graphic file (type bmp)
 
 
 [14]
+File: images/Q2_MeshConfiguration.png Graphic file (type bmp)
+<images/Q2_MeshConfiguration.png>
 File: images/Q2_CrackPropagarionPlot.png Graphic file (type bmp)
 <images/Q2_CrackPropagarionPlot.png>
 
@@ -1137,10 +1139,18 @@ File: images/Q2_ForceTimeResponse.png Graphic file (type bmp)
 
 
 [16]
+File: images/Q2_CrackPlasticDeform.png Graphic file (type bmp)
+<images/Q2_CrackPlasticDeform.png>
+
 
 [17]
+File: images/Q2_TractionSeparationComparison.png Graphic file (type bmp)
+<images/Q2_TractionSeparationComparison.png>
 
-[18] (main.aux)
+
+[18]
+
+[19] (main.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-04-29>
@@ -1154,12 +1164,12 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 26338 strings out of 405039
- 531574 string characters out of 5496419
- 1333403 words of memory out of 5000000
- 52643 multiletter control sequences out of 15000+600000
+ 26369 strings out of 405039
+ 532755 string characters out of 5496419
+ 1333505 words of memory out of 5000000
+ 52671 multiletter control sequences out of 15000+600000
  632377 words of font info for 70 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 98i,19n,101p,824b,4789s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 98i,19n,101p,845b,4789s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on main.pdf (18 pages).
+Output written on main.pdf (19 pages).

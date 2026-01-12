@@ -120,7 +120,7 @@ is to know the force-time response during the crack propagation, so that it can 
 curve.
 
 
-\section{Set up of the Model}
+\section{Model Set up}
 
 \subsection{Material Properties}
 
@@ -207,7 +207,7 @@ no constraint in terms of element numbers as well as computational power restric
     \centering
     \includegraphics[width=0.8\textwidth]{images/Mesh_Task1.png}
     \caption{Mesh configuration for the first task. A standard and linear CPS4 (4-node bilinear plane stress quadrilateral) mesh configuration is implemented 
-    with the possibility to change to plane stress and plane strain condition, without reduced integration mode. Additional refinement 
+    with the possibility to change to plane stress and plane strain (CPE4) condition, without reduced integration mode. Additional refinement 
     is added to the crack tip with more structured mesh wit 15 nodes mesh partitioning.}
     \label{fig:Mesh_Task1}
 \end{figure}
@@ -215,8 +215,9 @@ no constraint in terms of element numbers as well as computational power restric
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.8\textwidth]{images/Mesh_Task2.png}
-    \caption{Final mesh configuration for both question 1 and question 2. The mesh is created using CPS4 element type, which is a 4-node bilinear plane stress quadrilateral element.
-    The mesh is refined around the crack tip area to accurately capture the stress concentration effects.}
+    \caption{Final mesh configuration for both question 1 and question 2. The mesh is created using CPE4 element type, which is a 4-node bilinear plane strain quadrilateral element.
+    The mesh is refined around the crack tip area to accurately capture the stress concentration effects. More detailed mesh sizing configuration is shown 
+    in figure~\ref{fig:Q2_MeshConfiguration}.}
     \label{fig:Mesh_Task2}
 \end{figure}
 
@@ -502,8 +503,19 @@ and propagates along the cohesive surface.}
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.99\textwidth]{images/Q2_CrackPropagarionPlot.png}
-  \caption{Crack propagation plot showing the von Mises stress distribution at several load increments. The crack initiates and propagates along the cohesive surface as the load increases.}
+  \includegraphics[width=0.9\textwidth]{images/Q2_MeshConfiguration.png}
+  \caption{A half-cut mesh configuration for the cohesive zone model in question 2 for the top part geometry. A fine mesh is used around the cohesive area to accurately capture the stress distribution during crack propagation.
+  The mesh size in the cohesive area is 0.01 mm, with an increase mesh transition of 2x of the element size, which at the neighboring elements is 0.02 mm
+  and 0.04 mm respectively. This is used to ensure a smooth transition in the mesh size, while still maintaining accuracy around the cohesive zone and decrease computational 
+  cost for the non-prioritized regions.}
+  \label{fig:Q2_MeshConfiguration}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.9\textwidth]{images/Q2_CrackPropagarionPlot.png}
+  \caption{Crack propagation plot showing the von Mises stress distribution at several load increments. The crack initiates and propagates along the cohesive surface through stages (c) to (f). Stage (a) and (b) shows
+  the pre-crack initiation, indicating a constant stress distribution with an increase in its value before the crack initiates.}
   \label{fig:Q2_CrackPropagationPlot}
 \end{figure}
 
@@ -514,12 +526,56 @@ and propagates along the cohesive surface.}
 Plot force versus time and summarize how the slope changes as the crack initiates and propagates.}
 \end{tcolorbox}
 
+\hspace{2em}To compute the force vs. time response, the reaction force ($R_{fy}$) in each node of the left upper edge
+(where the displacement is applied) is probed in the y-direction. This will give values of reaction force for
+every single mesh node, which then all of probed reaction force values are summed to obtain the total
+reaction force. Abaqus has automatically plotted the total reaction force vs.time response. Therefore, the total force
+can be calculated using the following equation:
+
+\begin{equation}
+    R_{fy,total}(t) = \sum_{i=1}^{n} R_{fy,i}(t)
+    \label{eq:TotalReactionForce}
+\end{equation}
+
 \begin{figure}[H]
   \centering
   \includegraphics[width=0.99\textwidth]{images/Q2_ForceTimeResponse.png}
-  \caption{Force-time response showing the total reaction force in the y-direction on the left edge of the upper part. The slope changes indicate crack initiation and propagation.}
+  \caption{Force-time response showing the total reaction force in the y-direction on the left edge of the upper part. The slope changes indicate crack initiation and propagation for stage 1 until stage 5.}
   \label{fig:Q2_ForceTimeResponse}
 \end{figure}
+
+\hspace{2em}To analyze the force behavior in the cohesive format, figure~\ref{fig:Q2_ForceTimeResponse} shows the plotted force-time response for the cohesive zone
+model in a plane strain condition. 1st stage shows a constant stress distribution (this also can be refered in figure~\ref{fig:Q2_CrackPropagationPlot} from (a) to (b)), where the force
+increases linearly with time. This step is also known as the pre-crack initiation, as the specimen remains
+in the linear region. As the crack initiates (stage 2), the slope begins to decrease,
+indicating the initial damage in the cohesive zone. This makes a decrease in the force value. As the
+crack propagates further, stage 3 shows a minimum drop point of the force value, whereas the crack continues to propagate
+(stage 4 - stage 5) the values remains relatively constant until the crack opening reach its maximum separation distance. 
+
+\hspace{2em}During the 1st stage until the initial crack initialize, this region is known as a 
+linear elastic region. Refer to the traction-separation curve in figure~\ref{fig:TractionSeparationCurve}, this region
+is represented by the initial linear region until it reaches the peak nominal stress that is input in Abaqus user definition, which is 500 MPa.
+As it reaches the peak nominal stress, the crack initiates and starts to propagate, which
+is represented by the 2nd stage until the final stage in figure~\ref{fig:Q2_ForceTimeResponse}. The decrease in the slope 
+force indicates that the cohesive zone is undergoing softening behavior, implied by the decrease of the load-bearing
+capacity of the cohesive zone as the separation displacement increases. This will reach a minimum point, where the force is at the lowest state, shown is 3rd stage.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.99\textwidth]{images/Q2_CrackPlasticDeform.png}
+  \caption{Plastic deformation around the crack tip during the crack propagation. The plastic deformation is observed
+  to occur around the crack tip, indicating that the plate is undergoing plastic bending during the loading.}
+  \label{fig:Q2_CrackPlasticDeform}
+\end{figure}
+
+\hspace{2em}As the crack propagates further, there is a slight increase in the force value, where it peaks located in the 4th
+stage. These phenomena can be explained by the fact that the event is not purely contribute from the separation 
+displacement in the normal direction, but also the plate plasticity plays a role during the deformation. As shown in preceeding figures, since the
+plate has quite high aspect ratio (b/h = 1.5625), therefore the plate will have tendency to
+undergo bending during the loading. Therefore, an increase in the force value is observed since the plastic-bending deformation
+also contribute to the overall reaction force. After this local bending, the force is relatively constant until the crack reaches
+its maximum separation displacement. 
+
 
 \newpage
 \vspace{1em}
@@ -527,6 +583,13 @@ Plot force versus time and summarize how the slope changes as the crack initiate
   \textit{$\dots$ Extract traction values at three selected points along the cohesive surface. 
 Compare these results with the analytical traction-separation curve and provide a concise conclusion.}
 \end{tcolorbox}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.99\textwidth]{images/Q2_TractionSeparationComparison.png}
+  \caption{Comparison of traction values at three selected points along the cohesive surface with the analytical traction-separation curve.}
+  \label{fig:Q2_TractionSeparationComparison}
+\end{figure}
 
 
 
