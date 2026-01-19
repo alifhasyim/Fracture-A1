@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (MiKTeX 25.4) (preloaded format=xelatex 2025.11.27)  12 JAN 2026 12:20
+This is XeTeX, Version 3.141592653-2.6-0.999997 (MiKTeX 25.4) (preloaded format=xelatex 2025.11.27)  18 JAN 2026 18:25
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -971,11 +971,7 @@ Package: blx-case-expl3 2024/03/21 v3.20 expl3 case changing code for biblatex
 \llabelsep=\skip82
 \@quotelevel=\count466
 \@quotereset=\count467
- (main.aux
-
-LaTeX Warning: Label `fig:Q1_C_StressCurve' multiply defined.
-
-)
+ (main.aux)
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 63.
@@ -1083,29 +1079,31 @@ File: images/Q1_Elastic_PStress.png Graphic file (type bmp)
 <images/Q1_Elastic_PStress.png>
 File: images/Q1_Elastic_PStrain.png Graphic file (type bmp)
 <images/Q1_Elastic_PStrain.png>
+
+
+[5]
 File: images/Q1_Elastic_Comparison.png Graphic file (type bmp)
 <images/Q1_Elastic_Comparison.png>
 
 
-[5]
-
 [6]
 File: images/Q1_ResponseElPl.png Graphic file (type bmp)
 <images/Q1_ResponseElPl.png>
+
+
+[7]
 File: images/Q1_Plastix_PStress.png Graphic file (type bmp)
 <images/Q1_Plastix_PStress.png>
 File: images/Q1_Plastix_PStrain.png Graphic file (type bmp)
 <images/Q1_Plastix_PStrain.png>
-
-
-[7]
-File: images/Q1_Comparison_All.png Graphic file (type bmp)
-<images/Q1_Comparison_All.png>
 File: images/Q1_Comparison_Img_All.png Graphic file (type bmp)
 <images/Q1_Comparison_Img_All.png>
 
 
 [8]
+File: images/Q1_Comparison_All.png Graphic file (type bmp)
+<images/Q1_Comparison_All.png>
+
 
 [9]
 File: images/Ramberg-Osgood.png Graphic file (type bmp)
@@ -1120,56 +1118,69 @@ File: images/Q1_JIntegral.png Graphic file (type bmp)
 [11]
 
 [12]
+File: images/Q1_LiteratureGeom.png Graphic file (type bmp)
+<images/Q1_LiteratureGeom.png>
+
 
 [13]
+
+[14]
+
+LaTeX Warning: Reference `fig:TractionSeparationCurve' on page 15 undefined on 
+input line 618.
+
 File: images/Q2_TractionSeparationCurve.png Graphic file (type bmp)
 <images/Q2_TractionSeparationCurve.png>
 
 
-[14]
+[15]
 File: images/Q2_MeshConfiguration.png Graphic file (type bmp)
 <images/Q2_MeshConfiguration.png>
 File: images/Q2_CrackPropagarionPlot.png Graphic file (type bmp)
 <images/Q2_CrackPropagarionPlot.png>
 
 
-[15]
+[16]
 File: images/Q2_ForceTimeResponse.png Graphic file (type bmp)
 <images/Q2_ForceTimeResponse.png>
 
 
-[16]
+[17]
+
+LaTeX Warning: Reference `fig:TractionSeparationCurve' on page 18 undefined on 
+input line 688.
+
 File: images/Q2_CrackPlasticDeform.png Graphic file (type bmp)
 <images/Q2_CrackPlasticDeform.png>
 
 
-[17]
+[18]
 File: images/Q2_TractionSeparationComparison.png Graphic file (type bmp)
 <images/Q2_TractionSeparationComparison.png>
 
 
-[18]
+[19]
 
-[19] (main.aux)
+[20] (main.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-04-29>
  ***********
 
 
-LaTeX Warning: There were multiply-defined labels.
+LaTeX Warning: There were undefined references.
 
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 26369 strings out of 405039
- 532755 string characters out of 5496419
- 1333505 words of memory out of 5000000
- 52671 multiletter control sequences out of 15000+600000
- 632377 words of font info for 70 fonts, out of 8000000 for 9000
+ 26385 strings out of 405039
+ 533215 string characters out of 5496419
+ 1333572 words of memory out of 5000000
+ 52685 multiletter control sequences out of 15000+600000
+ 632385 words of font info for 71 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 98i,19n,101p,845b,4789s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 98i,19n,101p,845b,4791s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on main.pdf (19 pages).
+Output written on main.pdf (20 pages).

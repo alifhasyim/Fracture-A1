@@ -260,6 +260,42 @@ the two cases.}
     \end{minipage}
 \end{figure}
 
+\hspace{2em}Both figures above shows the stress field for the plane stress and strain condition for figure~\ref{fig:Q1_Elastic_PStress} and~\ref{fig:Q1_Elastic_PStrain}
+respectively. In plane stress, the Von-Misses stress area as well as the value are larger compare to the plane strain. The area shows more rounded shape
+with an almost equal radius, while the plane strain created a larger stress distribution near the back tip of the crack.
+
+\hspace{2em}This difference is caused by the different set-up and definition of plane stress and strain model. Where in the plane stress, the out-plane stress is essentially zero:
+
+\begin{equation}
+  \sigma_z = 0
+\end{equation}
+
+\hspace{2em} Whereas in the plane strain, the constraint is located in the strain out-of-plane is defined as
+follows:
+
+\begin{equation}
+  \varepsilon_z = 0
+\end{equation}
+
+\hspace{2em}Theoretically, as the strain is constraint in the out-plane direction, additional stress will be generated due to the restriction of
+movement in one plane. However, the main context here is the Von-Misses stress, which basically dependant to the deviatoric part of the stress instead of 
+the hydrostatic part. Hence, the basic Von-Misses formulation is calculated as follows:
+
+\begin{equation}
+  \sigma_{vm} = \sqrt{\frac{3}{2}s_{ij}s{ij}}
+\end{equation}
+
+\hspace{2em}Where the deviatoric shear component can be described using the hydrostatic term $\sigma_h$ in following equation:
+
+\begin{equation}
+  s_{ij} = \sigma_{ij} - \sigma_h \delta_{ij}
+\end{equation}
+
+\hspace{2em}As mentioned before, the plane strain condition will increase the triaxiality stress component ($\eta = \frac{\sigma_h}{\sigma_{vm}}$), by means of increasing the hydrostatic stress due to 
+restriction of one axis freedom, consequently generating additional stress in that direction. Hence, the shear component consequently decreased as well as the overall Von-Misses stress. While in plane stress, the shear component
+will be larger compare to plane strain as it allows more freedom in the out-plane movement, which therefore increase the Von-Misses value. To visualize the stress distribution
+numerically, figure~\ref{fig:Q1_Elastic_Stress_Curve} shows the Von-Misses distribution along path C, which describe additionally in the graph picture.
+
 
 
 \begin{figure}[H]
@@ -288,18 +324,26 @@ stress and strain components along path C for both plane strain and plane stress
   \label{fig:Q1_ResponseElPl}
 \end{figure}
 
+\hspace{2em}Figure~\ref{fig:Q1_ResponseElPl} shows the reaction force plot curve respectively to the displacement, which
+have been probed in one of the edges of the applied displacement boundary condition. For both elastic and plastic case, the plane strain
+generated larger forces compare to the plane stress. This can be explained as well with the previous description of plane stress and strain in the first
+part of Q1, that plane strain created more hydrostatic stress component due to the restriction of one of the out-plane strain component of $\varepsilon_z$.
+Hence, the probed value of reaction force in u direction, which is proportional to the $\sigma_{22}$, will also produce larger quantities.
 
+\hspace{2em}Comparing the elastic and plastic behavior, all curves show a good agreement in the physical interpretation of elastic and plastic material
+behavior. Whereas in the plastic variation, there are a softening of material due to the defined plasticity after the yielding region. This is showing a contrast in the elastic
+material, which plasticity is not introduced in the model. Therefore, a continuous linear-behavior is generated throughout a larger displacement. 
 
 \begin{figure}[H]
     \centering
-    \begin{minipage}{0.49\textwidth}
+    \begin{minipage}{0.45\textwidth}
         \centering
         \includegraphics[width=\textwidth]{images/Q1_Plastix_PStress.png}
         \caption{Von Mises stress contour plot around the crack tip for plastic analysis under plane stress condition.}
         \label{fig:Q1_Plastic_PStress}
     \end{minipage}
     \hfill
-    \begin{minipage}{0.49\textwidth}
+    \begin{minipage}{0.45\textwidth}
         \centering
         \includegraphics[width=\textwidth]{images/Q1_Plastix_PStrain.png}
         \caption{Von Mises stress contour plot around the crack tip for plastic analysis under plane strain condition.}
@@ -307,21 +351,40 @@ stress and strain components along path C for both plane strain and plane stress
     \end{minipage}
 \end{figure}
 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{images/Q1_Comparison_Img_All.png}
+    \caption{Stress components along path C for both plane stress and plane strain conditions in elastic-plastic analysis. (a) Elastic plane stress, (b) elastic plane strain, (c) plastic plane stress, (d) plastic plane strain}
+    \label{fig:Q1_all_stressDist}
+\end{figure}
+
+\hspace{2em}To point out the differences of the stress distribution point, a list of the visualization description
+is created to point out and highlight the behavior for each case:
+\begin{itemize}
+  \item In plastic-plane stress case figure~\ref{fig:Q1_all_stressDist}(c), the stress concentration area is smaller compared in the plane strain condition shows in figure~\ref{fig:Q1_all_stressDist}(d).
+  \item The plastic-plane strain produced larger area in the von-Misses in an oval-like shape spreading dominantly in the vertical direction.
+  \item Both elastic-plane stress and strain create significantly smaller area compare to the elastic-plastic case, however the value is significantly larger.
+\end{itemize}
+
+
+\hspace{2em}Both figure~\ref{fig:Q1_Plastic_PStress} and~\ref{fig:Q1_Plastic_PStrain} show the Von-Misses stress distribution
+for both plane stress and strain cases, respectively. Compare to the elastic cases, elastic-plastic conditions have smaller value in terms of the Von-Misses
+stress value. This can be related to figure~\ref{fig:Q1_ResponseElPl}, that the force reaction has larger value in the elastic part compare in the plastic
+material. Since plasticity is introduced and softening is implemented after the material exceeds its yielding point,
+the generated stress will have smaller value compare to the elastic material if compared in the same displacement. In the C-curve comparison showed in figure~\ref{fig:Q1_C_StressCurve},
+near the cracked tip showed a significant difference of Von-Misses stress value, especially for the elastic and plastic comparison,
+the differences are quite large for both plane stress and strain cases. 
+
 
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.99\textwidth]{images/Q1_Comparison_All.png}
+    \includegraphics[width=0.9\textwidth]{images/Q1_Comparison_All.png}
     \caption{Stress components along path C for both plane stress and plane strain conditions in elastic-plastic analysis.}
     \label{fig:Q1_C_StressCurve}
 \end{figure}
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.99\textwidth]{images/Q1_Comparison_Img_All.png}
-    \caption{Stress components along path C for both plane stress and plane strain conditions in elastic-plastic analysis.}
-    \label{fig:Q1_C_StressCurve}
-\end{figure}
+
 
 \newpage
 \vspace{1em}
@@ -377,13 +440,27 @@ can be calculated as follows:
 \label{fig:RambergOsgood}
 \end{figure}
 
-After the elastic-plastic behavior is defined, the J-integral values are evaluated for both
-elastic and elastic-plastic cases in plane stress condition. The J-integral values results as well as the von Mises stress comparison are plotted for elastic and elastic-plastic condition
+\hspace{1em}After the elastic-plastic behavior is defined, the J-integral values are evaluated for both
+elastic and elastic-plastic cases in plane stress condition. The J-integral values and the von Mises stress distribution results are plotted for 
+elastic and elastic-plastic condition
 in figure~\ref{fig:Q1_JIntegral}. From the figure,
-it can be observed that J-integral values for both cases show a converging trend as the contour number increases.
-The main difference is highlighted in the different values of J-integral, as the elastic-plastic case have smaller values compare to
-elastic case, which shown in shifting downward of the elastic-plastic curve. This can be correlated with the von Mises stress
-distribution around the crack tip, where the elastic case shows higher stress concentration compare to the elastic-plastic case.
+it can be observed that J-integral values for both cases show a converging trend as the contour number increases. For elastic case, the representative
+J integral value can be taken from contour number 5 until 10, which around 5.5 N/mm. Meanwhile, for elastic-plastic case,
+the representative J integral value can be taken from contour number 5 until 10 as well, which around 2.26 N/mm. For both elastic-plastic and 
+elastic case, the difference can be observed from the discrepancy of the J-integral values, as the elastic-plastic case have smaller values compare to
+elastic case, which shown in shifting downward of the elastic-plastic curve. This relation also shown within von Mises stress
+distribution results around the crack tip, where the elastic case shows higher stress concentration compare to the elastic-plastic case.
+
+\hspace{1em}This discrepancy can be explained through the fact, that J-integral have dependency 
+to the stress field, which for both relation of the J-integral value as well for the stress field 
+are in a good agreement. The higher stress-field results can be explained in figure~\ref{fig:Q1_ResponseElPl}, whereas in
+the force-displacement controlled test, the elastic case produced a larger force compared to the elastic-plastic
+case. This is due to the fact, that in the elastic case, larger force will be produced in a higher displacement since
+softening is not introduced in this model. Therefor, the results showed a good agreement with the physical
+interpretation.
+
+
+
 
 \begin{figure}[H]
   \centering
@@ -393,8 +470,7 @@ distribution around the crack tip, where the elastic case shows higher stress co
   \label{fig:Q1_JIntegral}
 \end{figure}
 
-To validate the J-integral results, evaluating the theoretical J-integral value can be done so that the accuracy of the FEM
-simulation can be known. The first step is by knowing the stress intensity factor $K_I$ for the crack tip, '
+To validate the J-integral results, evaluating the theoretical J-integral value is conducted to determine the FEM accuracy. The first step is by knowing the stress intensity factor $K_I$ for the crack tip, 
 which can be calculated using the following equation:
 
 \begin{equation}
@@ -414,8 +490,33 @@ and a is the crack length. The function $f\left( \frac{a}{W} \right)$ is a geome
   \label{eq:GeometryCorrectionFactor} 
 \end{equation}
 
-\hspace{1em}This equation is obtained based on literature Zhu et al. (2010) for compact C(T) specimen under mode I loading condition~\cite{Zhu.2012}, hence f = 6.043. The missing puzzle located
-in the loading P, which here based on the literature is a singular load applied in the hole area of the C(T) specimen. To obtain this equivalent load,
+\hspace{1em}This equation is obtained based on literature Zhu et al. (2010) for compact C(T) specimen under mode I loading condition~\cite{Zhu.2012}. This is the closest
+model that can be found, since both set up has similar test configuration, whereas in the literature, it used additional two holes in the geometry to introduce the concentrated force. Figure~\ref{fig:Q1_LiteratureGeom} shows the C(T) geometry with the geometry dimension
+nomenclature details.
+
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.3\textwidth]{images/Q1_LiteratureGeom.png}
+  \caption{The compact tension (C(T)) specimen based on literature~\cite{Zhu.2012}. Two green arrows shows the applied concentration forces to introduce
+  crack propagation.}
+  \label{fig:Q1_LiteratureGeom}
+\end{figure}
+
+Another literature~\cite{Clarke.1979} mentioned by Clarke, that the geometry factor can be calculated using their proposed equation for
+C(T) specimen:
+
+\begin{equation}
+  f\!\left(\frac{a}{W}\right) = 29.6(\frac{a}{W})^{0.5} - 185.5(\frac{a}{W})^{1.5} + 655.7(\frac{a}{W})^{2.5} - 1017(\frac{a}{W})^{3.5} + 638.9(\frac{a}{W})^{4.5} 
+  \label{eq:ClarkeEq}
+\end{equation}
+
+\hspace{1em}Hence, the equation uses different factors to describe the relation of the ratio of the crack length and the 
+specimen width. For $\frac{a}{W} = \frac{0.504}{2.4} = 0.21$ hence $f$\cite{Zhu.2012} = 4.401 using the equation~\ref{eq:GeometryFactor}. While using the equation~\ref{eq:ClarkeEq}
+the results is $f$\cite{Clarke.1979} = 5.217. 
+
+\hspace{1em}The last aspect that need to be addressed is the loading P. Whereas both literatures implemented concentrated forces applied in both gauge holes to place the loading, which shown in the green arrows in figure~\ref{fig:Q1_LiteratureGeom}. 
+To obtain the equivalent load from the simulation,
 the reaction force from the applied displacement is extracted from the FEM simulation by probing the reaction force in the y-direction
 on the left edge of the plate. Based on the probing values in Abaqus, the reaction force is obtained as 205.559 N for the elastic case, while 
 for elastic-plastic case the observed reaction force is 97.5102 N.
@@ -434,31 +535,62 @@ Where $E'$ is the effective Young's modulus, which for plane stress condition is
     \label{eq:JIntegralElasticPlastic}
 \end{equation}
 
-Where $\eta_{pl}$ is a geometry factor, $A_{pl}$ is the plastic area, $B$ is the thickness, and $b$ is the uncracked ligament length ($b = W - a$). Hence, $A_{pl}$ will be calculated manually by observing
-the plastic area by looking at the PEEQ. Based on the measurement, the plastic area for the elastic-plastic specimen is 7.333e-02 $mm^2$. While the geometry factor can be calculated using reference of Clarke et.al~\cite{Clarke.1979}. The geometry factor
-can be calculated using the following equation:
+Where $\eta_{pl}$ is a geometry factor, $A_{pl}$ is the plastic area under the load-displacement curve, $B$ is the thickness, and $b$ is the uncracked ligament length ($b = W - a$). 
+For the plastic area based on the elastic-plastic force-displacement curve, the calculated area is 0.569 N.mm.
+
+
+\hspace{1em}While the geometry factor can be calculated using referenced equation from Xian-Kui~\cite{Zhu.2012}, which can be described as following equation:
 \begin{equation}
     \eta_{pl} = 2 + 0.522 \frac{b}{W}
     \label{eq:GeometryFactor}
 \end{equation}
 
-A table is created to summarize the theoretical J-integral values calculation for both elastic and elastic-plastic case. The summary
-is shown in table~\ref{tab:JIntegralCalculation}.
+A table is created to summarize the theoretical J-integral values calculation for both elastic and elastic-plastic case. The summary also consist of calculation using
+different geometry factor $f$ which obtained from different literature as a comparison of both parameterization performance.
 
 \begin{table}[H]
 \centering
-\caption{Theoretical J-integral value calculation summary for elastic and elastic-plastic case.}
-\label{tab:JIntegralCalculation}
+\caption{Theoretical J-integral value calculation summary for elastic and elastic-plastic case}
+\label{tab:JIntegralCalculation1}
 \resizebox{\textwidth}{!}{%
-\begin{tabular}{lccccccc}
+\begin{tabular}{lccccc}
     \toprule
-    Material Model & P (N) & $K_I$ (MPa$\sqrt{m}$) & $J_{el}$ (N/mm) & $A_{pl}$ (mm$^2$) & $\eta_{pl}$ & $J_{pl}$ (N/mm) & Total J (N/mm) \\
+    Material Model & P (N) & $K_I$\cite{Zhu.2012} (MPa$\sqrt{m}$) & $K_I$\cite{Clarke.1979} (MPa$\sqrt{m}$) & $J_{el}$ (N/mm)~\cite{Zhu.2012} & $J_{el}$ (N/mm)~\cite{Clarke.1979} \\
     \midrule
-    Elastic & 205.559 & 1000.2902 & 4.765 & -- & -- & -- & 4.765 \\
-    Elastic-Plastic & 97.5102 & 475.452 & 1.076 & $7.333\times10^{-2}$ & 2.351 & 0.167 & 1.243 \\
+    Elastic & 205.559 & 583.959  & 692.232  & 1.624 & 2.282  \\
+    Elastic-Plastic & 97.5102 & 277.010  & 328.371  & 0.365 & 0.513\\
     \bottomrule
 \end{tabular}}
 \end{table}
+
+\begin{table}[H]
+\centering
+\caption{Final results of the theoretical J-integral value calculation summary for elastic and elastic-plastic case (continue from table~\ref{tab:JIntegralCalculation1}).}
+\label{tab:JIntegralCalculation2}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{cccccc}
+    \toprule
+    $A_{pl}$ (N.mm) & $\eta_{pl}$ & $J_{pl}$ (N/mm) & \textbf{Total J\cite{Zhu.2012} (N/mm)} & \textbf{Total J\cite{Clarke.1979}} (N/mm) & \textbf{Sim. Result (N/mm)} \\
+    \midrule
+    -- & -- & -- & \textbf{1.624} & \textbf{2.282} & \textbf{5.5}  \\
+    0.569 & 2.412 & 0.724 & \textbf{1.089} & \textbf{1.237} & \textbf{2.26}  \\
+    \bottomrule
+\end{tabular}}
+\end{table}
+
+\hspace{1em}Based on the theoretical calculation from both literatures, all values for each reference are not in a good 
+agreement with the simulation results. However, a good agreement showed in relation of elastic-plastic and elastic case 
+for the calculated results, where the elastic case J-integral
+is consistently larger than the elastic-plastic case in the load-displacement controlled experiment, according to the relation for J-integral comparison in figure~\ref{fig:Q1_JIntegral}. 
+Hence, the discrepancy can be explained from the theoretical point of view, that the limitation came
+from the parameterized factor $f(\frac{a}{W})$, where from both literatures are using the C(T) experimental set up as shown exactly in 
+figure~\ref{fig:Q1_LiteratureGeom}. This may come from the force set up, as in the experiment two holes are used
+as the referenced hinged-force placement. This concludes that the present simulation model is not fully equivalent 
+to the experimental set-up from both literatures. 
+
+\hspace{1em}From the simulation point of view, these discrepancies are likely not cause by the simulation results since
+the J-integral plot have already shown a converged result. Therefore, a geometry factor specifically for this test-case set up
+should be used to validate the accuracy of the modelling.
 
 
 
@@ -490,7 +622,7 @@ which represents the softening behavior of the cohesive zone. The final traction
   \includegraphics[width=0.99\textwidth]{images/Q2_TractionSeparationCurve.png}
   \caption{Traction-separation curve based on the cohesive parameters defined in table~\ref{tab:CohesiveQ2}. The curve shows the initial linear elastic region,
   followed by the softening region until failure separation displacement is reached.}
-  \label{fig:TractionSeparationCurve}
+  \label{fig:Q2_TractionSeparationCurve}
 \end{figure}
 
 \newpage
@@ -591,13 +723,29 @@ Compare these results with the analytical traction-separation curve and provide 
   \label{fig:Q2_TractionSeparationComparison}
 \end{figure}
 
+\hspace{2em}To compare the implemented traction-separation curve and the simulation results, figure~\ref{fig:Q2_TractionSeparationComparison}
+shows both plots, showing the probed location on each of the point location in the geometry. As in the first region, both analytical and simulation result shows
+the same behavior in the linear increase of the traction. As it reached its peak, which have stress of 500 MPa, the traction starts to decrease in the
+same starting point of the displacement as well. However, differences start to be observed in the softening part, as the simulated result are having the softer behavior compare to
+the defined traction-separation curve.
+
+\hspace{2em}Referring to the implemented traction-separation curve in figure~\ref{fig:Q2_TractionSeparationCurve}, the stiffness is defined for every
+axis direction, which are in normal and both two shear direction stresses. While, the separation criterion is only implemented for
+the normal direction only. This softening in the simulated result can be explained by the fact that the 
+stiffness in two shear direction are still exists. Since there is no separation criterion in the stiffness, these shear-stiffness helped the separation process degrade softer instead of in a steep decrease sense as in the defined
+curved. Because in the geometry, not only normal stress but shear stresses in two directions are also take part as the main contributor of the stress generation. Therefore, this softening are shown and the separation displacement
+criterion is increase as well because it takes longer displacement to reach zero traction as the curve is more flattened compare to the steep one.
 
 
-
-\newpage
 \section*{Conclusion}
 To sum up everything that have been analyzed and gathered in this study, 
 here are some several key takeaways from this small case study:
+\begin{itemize}
+  \item The higher value of Von-Misses stress in plane stress compare to plane strain is caused by the non-restrictive out-plane strain, which give more plane stress to generate Stresses. While plane strain restrictive out-plane strain will increase the hydrostatic stress, contradictively by knowing the relation of hydrostatic and von-Misses stress, this will reduce the von-Misses stress value. 
+  \item In contrast to the Von-Misses value, the generated force in plane strain is larger due to the out-plane strain restriction, since the hydrostatic have relation as well to the $\sigma_{22}$ component, meaning that the reaction force in the same direction will also increase by this means.
+  \item J-Integral calculation should use a suitable geometry factor parameterization, specifically for the exact boundary condition set up for both simulation and experimental in order to generate a good agreement results comparison of the theoretical and simulation results.
+  \item Softening effect will present in the cohesive zone during separation due to the contribution of ...
+\end{itemize}
 
 \printbibliography
 
