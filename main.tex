@@ -110,12 +110,13 @@ will be calculated based on the stress field using domain integral method to obt
 is to find the stable value of J-integral based on the contour integral surrounding the crack, which will be used
 as a reference value for the crack initiation value.
 
-\hspace{2em}The second task is to analyze crack propagation using the cohesive zone method. Hence, some
-cohesive elements will be defined along the pre-defined crack path with the 
+\hspace{2em}The second task is to analyze crack propagation using the cohesive zone method. Hence, cohesive zone
+will be defined along the pre-defined crack path with the 
 cohesive parameters with an initial crack opening on the front of the cohesive line. 
 From the task definition, the separation behavior of the cohesive are will be observed, as well as the energy release 
-rate. This can be achieved by plotting the traction-separation curve, which will show the
-relationship between the traction and separation displacement along the cohesive zone. Another key aspect that will be obtained
+rate. This can be achieved by plotting the traction-separation curve on some points, which will show the
+relationship between the traction and separation displacement along the cohesive zone. This curve will be also compared with the
+pre-defined traction-separation curve, whether it has the same behavior or not. Another key aspect that will be obtained
 is to know the force-time response during the crack propagation, so that it can be correlated with the traction-separation
 curve.
 
@@ -201,7 +202,8 @@ as the crack initiation length.
 \subsection{Mesh Set Up}
 
 \hspace{2em}The next step after setting up the geometry and boundary condition is the mesh definition. Since there is
-no constraint in terms of element numbers as well as computational power restriction, a fine mesh is used for both questions.
+no constraint in terms of element numbers as well as computational power restriction, a fine mesh is used for both questions. A further information is presented in
+the second question figure~\ref{fig:Q2_MeshConfiguration} for the cohesive zone partitioning sizes.
 
 \begin{figure}[H]
     \centering
@@ -457,7 +459,7 @@ to the stress field, which for both relation of the J-integral value as well for
 are in a good agreement. The higher stress-field results can be explained in figure~\ref{fig:Q1_ResponseElPl}, whereas in
 the force-displacement controlled test, the elastic case produced a larger force compared to the elastic-plastic
 case. This is due to the fact, that in the elastic case, larger force will be produced in a higher displacement since
-softening is not introduced in this model. Therefor, the results showed a good agreement with the physical
+softening is not introduced in this model. Therefore, the results showed a good agreement with the physical
 interpretation.
 
 
@@ -579,7 +581,7 @@ different geometry factor $f$ which obtained from different literature as a comp
 \end{tabular}}
 \end{table}
 
-\hspace{1em}Based on the theoretical calculation from both literatures, all values for each reference are not in a good 
+\hspace{1em}Based on the theoretical calculation from both literatures, the calculated J integral for elastic case is not in a good 
 agreement with the simulation results. However, a good agreement showed in relation of elastic-plastic and elastic case 
 for the calculated results, where the elastic case J-integral
 is consistently larger than the elastic-plastic case in the load-displacement controlled experiment, according to the relation for J-integral comparison in figure~\ref{fig:Q1_JIntegral}. 
@@ -590,8 +592,8 @@ as the referenced hinged-force placement. This concludes that the present simula
 to the experimental set-up from both literatures. 
 
 \hspace{1em}From the simulation point of view, these discrepancies are likely not cause by the simulation results since
-the J-integral plot have already shown a converged result. Therefore, a geometry factor specifically for this test-case set up
-should be used to validate the accuracy of the modelling.
+the J-integral plot have already shown a converged result for the elastic-plastic case. A geometry factor specifically for this test-case set up
+should be used to validate the accuracy of the modelling, so that the results could be comparable.
 
 
 
@@ -616,13 +618,14 @@ $\sigma_n = 500 \text{ MPa}$, while the shear direction maximum nominal stress i
 is $\delta_{fail} = 0.0038 \text{ mm}$. This information is then used to draw the curve, by plotting the stiffness as the
 slope of the curve in the initial linear region, until it reaches the maximum nominal stress. After knowing the maximum
 value, a line is drawn from the maximum nominal stress to the failure separation displacement point (hence the stress value is 0),
-which represents the softening behavior of the cohesive zone. The final traction-separation curve is shown in figure~\ref{fig:TractionSeparationCurve}.
+which represents the softening behavior of the cohesive zone. The final traction-separation curve is shown in figure~\ref{fig:Q2_TractionSeparationCurve}.
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.99\textwidth]{images/Q2_TractionSeparationCurve.png}
-  \caption{Traction-separation curve based on the cohesive parameters defined in table~\ref{tab:CohesiveQ2}. The curve shows the initial linear elastic region,
-  followed by the softening region until failure separation displacement is reached.}
+  \includegraphics[width=0.85\textwidth]{images/Q2_TractionSeparationCurve.png}
+  \caption{Traction-separation curve based on the cohesive parameters defined in table~\ref{tab:CohesiveQ2}. The fracture energy is equivalent to the area of the triangle, which is $G_c = \frac{1}{2}\sigma_n\delta_{fail} = 0.95 \text{ MPa.mm}$. The left side region of $G_c$ is the energy needed to
+  reach the maximum stress criterion for the separation to initiate, while the right side area of triangle $G_c$ is the energy needs to separate completely the two cohesive elements. Hence, this area is divided with $\delta_0$, which simply the distance criterion
+  to reach the $\sigma_n$ ($\delta_0 = \frac{\sigma_n}{E}$).}
   \label{fig:Q2_TractionSeparationCurve}
 \end{figure}
 
@@ -745,7 +748,7 @@ here are some several key takeaways from this small case study:
   \item The higher value of Von-Misses stress in plane stress compare to plane strain is caused by the non-restrictive out-plane strain, which give more plane stress to generate Stresses. While plane strain restrictive out-plane strain will increase the hydrostatic stress, contradictively by knowing the relation of hydrostatic and von-Misses stress, this will reduce the von-Misses stress value. 
   \item In contrast to the Von-Misses value, the generated force in plane strain is larger due to the out-plane strain restriction, since the hydrostatic have relation as well to the $\sigma_{22}$ component, meaning that the reaction force in the same direction will also increase by this means.
   \item J-Integral calculation should use a suitable geometry factor parameterization, specifically for the exact boundary condition set up for both simulation and experimental in order to generate a good agreement results comparison of the theoretical and simulation results.
-  \item Softening effect will present in the cohesive zone during separation due to the contribution of ...
+  \item Softening effect is present during the separation due to the additional added stiffness, referring to the $K_s$ and $K_t$, which in some sense delaying the separation process so that the $\delta_{fail}$ is extended from the previous defined value. 
 \end{itemize}
 
 \printbibliography
