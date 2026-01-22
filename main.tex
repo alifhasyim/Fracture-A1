@@ -208,7 +208,7 @@ no constraint in terms of element numbers as well as computational power restric
     \includegraphics[width=0.8\textwidth]{images/Mesh_Task1.png}
     \caption{Mesh configuration for the first task. A standard and linear CPS4 (4-node bilinear plane stress quadrilateral) mesh configuration is implemented 
     with the possibility to change to plane stress and plane strain (CPE4) condition, without reduced integration mode. Additional refinement 
-    is added to the crack tip with more structured mesh wit 15 nodes mesh partitioning.}
+    is added to the crack tip with more structured mesh with 40 nodes mesh partitioning.}
     \label{fig:Mesh_Task1}
 \end{figure}
 
@@ -444,9 +444,10 @@ can be calculated as follows:
 elastic and elastic-plastic cases in plane stress condition. The J-integral values and the von Mises stress distribution results are plotted for 
 elastic and elastic-plastic condition
 in figure~\ref{fig:Q1_JIntegral}. From the figure,
-it can be observed that J-integral values for both cases show a converging trend as the contour number increases. For elastic case, the representative
-J integral value can be taken from contour number 5 until 10, which around 5.5 N/mm. Meanwhile, for elastic-plastic case,
-the representative J integral value can be taken from contour number 5 until 10 as well, which around 2.26 N/mm. For both elastic-plastic and 
+it can be observed that J-integral values for plastic case shows a converging trend as the contour number increases. However for elastic case, converged 
+results is not visible for this case. %% --- ADD SOME EXPLANATION MORE WHY THE RESULTS ARE NOT CONVERGING --- %%  
+Therefore for elastic case, the representative J integral value can be taken from contour number 2 until 4, which around 5.35 N/mm. Meanwhile, for elastic-plastic case,
+the representative J integral value can be taken from contour number 6 until 10 as well, which around 1.81 N/mm. For both elastic-plastic and 
 elastic case, the difference can be observed from the discrepancy of the J-integral values, as the elastic-plastic case have smaller values compare to
 elastic case, which shown in shifting downward of the elastic-plastic curve. This relation also shown within von Mises stress
 distribution results around the crack tip, where the elastic case shows higher stress concentration compare to the elastic-plastic case.
@@ -573,7 +574,7 @@ different geometry factor $f$ which obtained from different literature as a comp
     $A_{pl}$ (N.mm) & $\eta_{pl}$ & $J_{pl}$ (N/mm) & \textbf{Total J\cite{Zhu.2012} (N/mm)} & \textbf{Total J\cite{Clarke.1979}} (N/mm) & \textbf{Sim. Result (N/mm)} \\
     \midrule
     -- & -- & -- & \textbf{1.624} & \textbf{2.282} & \textbf{5.5}  \\
-    0.569 & 2.412 & 0.724 & \textbf{1.089} & \textbf{1.237} & \textbf{2.26}  \\
+    0.569 & 2.412 & 0.724 & \textbf{1.089} & \textbf{1.237} & \textbf{1.81}  \\
     \bottomrule
 \end{tabular}}
 \end{table}
